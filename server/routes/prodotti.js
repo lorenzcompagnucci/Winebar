@@ -37,7 +37,6 @@ router.post("/", (req, res, next) => {
         console.log(err),
         res.status(500).json({error: err})
     });
-    
 });
 
 router.get("/:productId", (req, res, next) => {
