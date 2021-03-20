@@ -13,7 +13,6 @@ router.get("/", (req, res, next)=> {
         } else {
             res.status(404).json({message: "Non ho trovato niente"});
         }
-        
     })
     .catch(err => {
         console.log(err);
@@ -21,7 +20,7 @@ router.get("/", (req, res, next)=> {
     })
 });
 
-router.post('/', (req, res, next) => {
+router.post("/", (req, res, next) => {
     const prod = new Prodotto({
         id : new mongoose.Types.ObjectId(),
         nome : req.body.nome,
