@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Prodotti = require('prodotto.js');
+const Vini = require('vino.js');
 
 const ordineSchema= mongoose.Schema({
     id : mongoose.Types.ObjectId,
@@ -8,7 +8,7 @@ const ordineSchema= mongoose.Schema({
     importo : Number,
     indirizzo : String,
     telefono : String,
-    Prodotti : []
+    Vini : [],
 })
 
 module.exports = mongoose.model('Ordine', ordineSchema);
