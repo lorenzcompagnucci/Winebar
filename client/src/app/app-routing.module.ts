@@ -7,11 +7,11 @@ import { LoginComponent } from './componenti/login/login.component';
 import { OrdineComponent } from './componenti/ordine/ordine.component';
 
 const routes: Routes = [
-  {path: '**', component: HomepageComponent},
+  { path: '', redirectTo: '/homepage', pathMatch: 'full'},
   {path: 'homepage', component: HomepageComponent},
   {path: 'listino', component: ListinoComponent},
   {path: 'ordine', component: OrdineComponent},
-  {path: 'chi_siamo', component: AutoriComponent},
+  {path: 'chisiamo', component: AutoriComponent},
   {path: 'log', component: LoginComponent}
 ];
 
