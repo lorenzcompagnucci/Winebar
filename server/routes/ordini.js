@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-const Prodotto = require('../models/prodotto');
+const Ordine = require('../models/ordine');
 
 router.get("/", (req, res, next)=> {
-    Prodotto.find().exec()
+    Ordine.find().exec()
     .then(docs => {
         console.log(docs);
         if (docs.length >= 0) {
@@ -21,16 +21,20 @@ router.get("/", (req, res, next)=> {
 });
 
 router.post("/", (req, res, next) => {
-    const prod = new Prodotto({
+    const ordine = new Ordine({
         id : new mongoose.Types.ObjectId(),
-        nome : req.body.nome,
-        prezzo : req.body.prezzo
+        utente : req.body.utente,
+        data : req.body.data,
+        importo : req.body.importo,
+        indirizzo : req.body.indirizzo,
+        telefono : req.body.telefono,
+        vini: req.body.vini
     })
-    prod.save().then(result => {
+    ordine.save().then(result => {
         console.log(result);
         res.status(201).json({
-            message: 'POST requests per /prodotti',
-            createdProd: result
+            message: 'POST requests per /ordine',
+            createdOrdine: result
         });
     })
     .catch(err => {
@@ -39,9 +43,9 @@ router.post("/", (req, res, next) => {
     });
 });
 
-router.get("/:productId", (req, res, next) => {
-    const id = req.params.productId;
-    Prodotto.findById(id).exec()
+router.get("/:ordineId", (req, res, next) => {
+    const id = req.params.ordineId;
+    Ordine.findById(id).exec()
     .then(doc => {
         console.log(doc);
         if (doc) {
@@ -56,13 +60,13 @@ router.get("/:productId", (req, res, next) => {
     });
 });
 
-router.patch(":/productID", (req, res, next) => {
+router.patch(":/ordineID", (req, res, next) => {
     const id = req.params.productId;
     const updateOperations = {};
     for (const ops of req.body) {
         updateOperations[ops.propName] = ops.value; 
     }
-    Prodotto.update({id: id}, {$set: updateOperations}).exec().
+    Ordine.update({id: id}, {$set: updateOperations}).exec().
     then(result => {
         console.log(result);
         res.status(200).json(result);
@@ -73,9 +77,9 @@ router.patch(":/productID", (req, res, next) => {
     });
 });
 
-router.delete(":/productID", (req, res, next) => {
+router.delete(":/ordineID", (req, res, next) => {
     const id = req.params.productId;
-    Prodotto.remove({id: id}).exec().
+    Ordine.remove({id: id}).exec().
     then(result => {
         res.status(200).json(result)
     }).

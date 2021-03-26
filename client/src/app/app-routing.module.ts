@@ -7,7 +7,7 @@ import { LoginComponent } from './componenti/login/login.component';
 import { OrdineComponent } from './componenti/ordine/ordine.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/homepage', pathMatch: 'full'},
+  {path: '', redirectTo: '/homepage', pathMatch: 'full'},
   {path: 'homepage', component: HomepageComponent},
   {path: 'listino', component: ListinoComponent},
   {path: 'ordine', component: OrdineComponent},
@@ -19,4 +19,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

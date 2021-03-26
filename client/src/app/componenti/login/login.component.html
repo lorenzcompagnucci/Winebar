@@ -1,1 +1,22 @@
-<p>login works!</p>
+<div *ngIf="!isSignedIn">
+    <h2>Registrati</h2>
+    <input type="text" #emailR/>
+    <input type="text" #passwordR/>
+    <button (click) = "onSignup(emailR.value, passwordR.value)">Registrati</button>
+</div>
+
+<hr>
+
+<div *ngIf="!isSignedIn">
+    <h2>Login</h2>
+    <input type="text" #emailL/>
+    <input type="text" #passwordL/>
+    <button (click) = "onSignin(emailL.value, passwordL.value)">Login</button>
+</div>
+
+<hr>
+
+<div *ngIf="isSignedIn">
+    <h2>Logout</h2>
+    <button (click) = "handleLogout()">Logout</button>
+</div>
