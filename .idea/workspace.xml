@@ -7,34 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f226bc4c-1b79-4691-8565-0f5392939990" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/app/interfacce/ordine.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/interfacce/vino.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/servizi/firebase.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/servizi/firebase.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/immagini/God.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/immagini/God3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/immagini/VignetoLontano.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/immagini/god2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/immagini/god4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/ordini.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Relazione.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Relazione.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/autori/autori.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/autori/autori.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/autori/autori.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/autori/autori.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/homepage/homepage.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/homepage/homepage.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/homepage/homepage.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/homepage/homepage.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/immagini/google.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/ordine.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/ordine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/vino.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/vino.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/prodotti.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/vini.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +20,9 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="alessandr.finocchi@studenti.unicam.it" />
         <option value="STONAcream" />
+        <option value="alessandr.finocchi &lt;alessandr.finocchi@studenti.unicam.it&gt;" />
+        <option value="alessandr.finocchi@studenti.unicam.it" />
         <option value="Alessandro" />
       </list>
     </option>
@@ -75,7 +49,7 @@
       <option name="presentableId" value="Default" />
       <updated>1616751740856</updated>
       <workItem from="1616751897844" duration="21000" />
-      <workItem from="1616794393931" duration="313000" />
+      <workItem from="1616794393931" duration="918000" />
     </task>
     <task id="LOCAL-00001" summary="SECONDO COMMIT">
       <created>1616751765511</created>
@@ -91,7 +65,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616751910229</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Terzo commit">
+      <created>1616794986702</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1616794986702</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
