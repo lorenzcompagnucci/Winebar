@@ -29,10 +29,6 @@ export class FirebaseService {
     this.email = email;
   }
 
-  loginGmail(email: string, password: string) {
-    return this.firebaseAuth.signInWithEmailAndPassword(email, password);
-  }
-
   logout() {
     this.firebaseAuth.signOut();
     localStorage.removeItem('user');

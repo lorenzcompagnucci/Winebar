@@ -1,20 +1,16 @@
 <div *ngIf="!isSignedIn">
     <h2>Registrati</h2>
     <input type="text" #emailR/>
-    <input type="text" #passwordR/>
+    <input type="password" maxlength="8" size="18" #passwordR/>
     <button (click) = "onSignup(emailR.value, passwordR.value)">Registrati</button>
-</div>
 
-<hr>
+    <hr>
 
-<div *ngIf="!isSignedIn">
     <h2>Login</h2>
     <input type="text" #emailL/>
-    <input type="text" #passwordL/>
+    <input type="password" maxlength="8" size="18" #passwordL/>
     <button (click) = "onSignin(emailL.value, passwordL.value)">Login</button>
 </div>
-
-<hr>
 
 <div *ngIf="isSignedIn">
     <h2>Logout</h2>

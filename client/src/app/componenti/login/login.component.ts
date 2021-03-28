@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FirebaseService } from 'src/app/servizi/firebase.service';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 @Component({
   selector: 'app-login',
@@ -8,13 +11,16 @@ import { FirebaseService } from 'src/app/servizi/firebase.service';
 })
 export class LoginComponent implements OnInit {
 
+  private provider: any;
   isSignedIn = false;
 
-  constructor(public firebaseService: FirebaseService) {
+  constructor(private firebaseService: FirebaseService, private router: Router, private rote: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    this.provider = provider;
     if (localStorage.getItem('user') !== null)
       this.isSignedIn = true
     else 

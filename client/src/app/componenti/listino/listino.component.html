@@ -1,5 +1,22 @@
-<div class="div">
-    <p>
-        {{funziona}}
-    </p>
+<div class="container">
+    <div class= "row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <table class="table table-striped">
+                <tr>
+                    <th>Codice</th>
+                    <th>Nome</th>
+                    <th>Annata</th>
+                    <th>Prezzo</th>
+                    <th>Tipo</th>
+                </tr>
+                <tr *ngFor="let vino of vini">
+                    <td>{{vino.id}}</td>
+                    <td>{{vino.nome}}</td>
+                    <td>{{vino.annata}}</td>
+                    <td>{{vino.prezzo}}</td>
+                    <td>{{vino.tipo}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>

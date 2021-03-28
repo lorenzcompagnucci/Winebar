@@ -12,7 +12,7 @@ import { DBServiceService } from 'src/app/servizi/dbservice.service';
   styleUrls: ['./ordine.component.css']
 })
 export class OrdineComponent implements OnInit {
-
+  /** 
   ordine!: IOrdine;
   ordini: IOrdine[] = [];
   vini: IVino[] = [];
@@ -41,13 +41,20 @@ export class OrdineComponent implements OnInit {
     //this.taskService.addOrdine();
     this.ordine.id = this.ordini.length+1;
     this.ordine.utente = this.authService.getUserEmail;
-    /**
+    
       for (let i = 0; i< 10; i++) {
       this.ordine.importo += 10;
       this.vini.push();
     }
-    */ 
+    
     this.dbService.post('/winebar/ordini', this.ordine);
+  }*/
+
+  constructor() {
+
+  }
+  ngOnInit(): void {
+    
   }
 
 }

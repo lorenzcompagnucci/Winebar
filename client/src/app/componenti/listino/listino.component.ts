@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DBServiceService } from 'src/app/servizi/dbservice.service';
-import { IVino } from '../../interfacce/vino';
 
 @Component({
   selector: 'app-listino',
@@ -9,22 +8,16 @@ import { IVino } from '../../interfacce/vino';
 })
 export class ListinoComponent implements OnInit {
 
-  public vini: IVino[] = [];
-  public errMSG = '';
-  public funziona = "NO";
+  vini = [
+    {id: 1, nome: 'vino1', annata: 20121, prezzo: 10.1, tipo: 'bianco'},
+    {id: 2, nome: 'vino2', annata: 2010, prezzo: 15, tipo: 'rosso'},
+    {id: 3, nome: 'vino3', annata: 1500, prezzo: 100000, tipo: 'fucsia'}
+  ]
 
-  constructor(private dbService: DBServiceService) { }
+  constructor() {}
 
   ngOnInit(): void {
-      this.dbService.get('/winebar/vini').subscribe(
-      data => this.vini = data,
-      error => this.errMSG = error
-    );
-    this.funziona="Si";
-  }
-
-  public get getVini(): any {
-    return this.vini;
+    
   }
 
 }
