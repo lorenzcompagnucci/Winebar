@@ -1,4 +1,46 @@
 const express = require('express');
+const ordiniRoute = express.Router();
+
+
+let Ordini = require('../models/ordine');
+/** 
+ordiniRoute.route('/ordini').get((req, res, next) => {
+    Ordini.find((error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(data);
+        }
+    })
+})
+
+ordiniRoute.route('/secret').get((req, res, next) => {
+    Ordini.find((error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(data);
+        }
+    }).populate([
+        {
+            path: 'vino'
+        }
+    ])
+})*/
+
+ordiniRoute.route('/ordine').post((req, res, next) => {
+    Ordini.create(req.body, (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(data);
+        }
+    })
+})
+
+module.exports = ordiniRoute;
+/*
+const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
@@ -90,3 +132,4 @@ router.delete(":/ordineID", (req, res, next) => {
 });
 
 module.exports = router;
+*/

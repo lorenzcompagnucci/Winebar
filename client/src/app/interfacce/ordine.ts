@@ -1,9 +1,6 @@
 export interface IOrdine {
-    id: string;
+    id: number;
     utente: string;
-    data: Date;
     importo: number;
-    indirizzo: string;
-    telefono: string;
     vini: string[];
 }

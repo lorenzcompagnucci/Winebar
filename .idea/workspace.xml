@@ -7,7 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f226bc4c-1b79-4691-8565-0f5392939990" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/homepage/homepage.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/homepage/homepage.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/ordine/ordine.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/ordine/ordine.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/ordine.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/ordine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/ordini.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/ordini.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/vini.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/vini.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +58,7 @@
       <updated>1616751740856</updated>
       <workItem from="1616751897844" duration="21000" />
       <workItem from="1616794393931" duration="918000" />
+      <workItem from="1616883722462" duration="15000" />
     </task>
     <task id="LOCAL-00001" summary="SECONDO COMMIT">
       <created>1616751765511</created>

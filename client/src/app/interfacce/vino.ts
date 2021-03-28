@@ -1,5 +1,5 @@
 export interface IVino {
-    id: string;
+    id: number;
     nome: string;
     annata: number;
     prezzo: number;

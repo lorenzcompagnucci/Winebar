@@ -6,6 +6,7 @@ import { AngularFireAuth } from '@angular/fire/auth'
 })
 export class FirebaseService {
 
+  private email = '';
   isLoggedIn = false
 
   constructor(public firebaseAuth: AngularFireAuth) { }
@@ -16,6 +17,7 @@ export class FirebaseService {
       this.isLoggedIn = true
       localStorage.setItem('user', JSON.stringify(res.user))
     })
+    this.email = email;
   }
 
   async signup(email: string, password: string) {
@@ -24,11 +26,17 @@ export class FirebaseService {
       this.isLoggedIn = true
       localStorage.setItem('user', JSON.stringify(res.user))
     })
+    this.email = email;
   }
 
   logout() {
-    this.firebaseAuth.signOut()
-    localStorage.removeItem('user')
+    this.firebaseAuth.signOut();
+    localStorage.removeItem('user');
+    this.isLoggedIn = false;
+  }
+
+  public get getUserEmail(): string {
+    return this.email;
   }
 
 }

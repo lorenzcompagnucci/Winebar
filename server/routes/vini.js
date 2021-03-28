@@ -1,4 +1,21 @@
 const express = require('express');
+const viniRoute = express.Router();
+
+let Vini = require('../models/vino');
+
+viniRoute.route('/vini').get((req, res, next) => {
+    Vini.find((error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(data);
+        }
+    })
+})
+
+module.exports = viniRoute;
+/**
+ * const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
@@ -88,3 +105,4 @@ router.delete(":/productID", (req, res, next) => {
 });
 
 module.exports = router;
+ */

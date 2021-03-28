@@ -24,7 +24,7 @@ import { FirebaseService } from './servizi/firebase.service';
     OrdineComponent,
     AutoriComponent,
     LoginComponent,
-    AutoriComponent
+    AutoriComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(
