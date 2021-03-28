@@ -6,21 +6,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f226bc4c-1b79-4691-8565-0f5392939990" name="Default Changelist" comment="QUARTO COMMIT">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/homepage/homepage.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/homepage/homepage.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/homepage/homepage.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/homepage/homepage.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/listino/listino.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/listino/listino.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/listino/listino.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/listino/listino.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/ordine/ordine.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/ordine/ordine.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/servizi/firebase.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/servizi/firebase.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database/dbconn.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/dbconn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/ordini.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/ordini.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/vini.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/vini.js" afterDir="false" />
-    </list>
+    <list default="true" id="f226bc4c-1b79-4691-8565-0f5392939990" name="Default Changelist" comment="QUARTO COMMIT" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +52,7 @@
       <workItem from="1616899626481" duration="40000" />
       <workItem from="1616900829602" duration="8000" />
       <workItem from="1616943515647" duration="6000" />
+      <workItem from="1616943969041" duration="30000" />
     </task>
     <task id="LOCAL-00001" summary="SECONDO COMMIT">
       <created>1616751765511</created>
@@ -95,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616899646929</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="QUARTO COMMIT">
+      <created>1616943983069</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1616943983069</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
