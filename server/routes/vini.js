@@ -1,9 +1,19 @@
+let controller = require('../controller/viniroutes');
+const express = require('express');
+const router = express.Router();
+
+//Ritorna tutti i vini
+router.get('/', controller.getVini);
+
+module.exports = router;
+
+/*
 const express = require('express');
 const viniRoute = express.Router();
 
 let Vini = require('../models/vino');
 
-viniRoute.route('/vini').get((req, res, next) => {
+viniRoute.route('/winebar/vini').get((req, res, next) => {
     Vini.find((error, data) => {
         if (error) {
             return next(error);
@@ -13,7 +23,8 @@ viniRoute.route('/vini').get((req, res, next) => {
     })
 })
 
-module.exports = viniRoute;
+module.exports = viniRoute;*/
+
 /**
  * const express = require('express');
 const router = express.Router();

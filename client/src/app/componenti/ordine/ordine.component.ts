@@ -22,17 +22,17 @@ export class OrdineComponent implements OnInit {
     private authService: FirebaseService, 
     private router: Router,
     private listinoComponent: ListinoComponent, 
-    private dbService: DBServiceService) { }
+    private dbService: DBServiceService) {}
 
   ngOnInit(): void {
-    if (this.authService.isLoggedIn === false) {
-      this.router.navigateByUrl('/log');
-    } else {
+    if (this.authService.isLoggedIn) {
       this.vini = this.listinoComponent.getVini;
-      this.dbService.get('/ordini').subscribe(
+      this.dbService.get('/winebar/ordini').subscribe(
         data => this.ordini = data,
         error => this.errMSG = error
       );
+    } else {
+      this.router.navigateByUrl('/login');
     }
   }
 
@@ -47,7 +47,7 @@ export class OrdineComponent implements OnInit {
       this.vini.push();
     }
     */ 
-    this.dbService.post('/ordini', this.ordine);
+    this.dbService.post('/winebar/ordini', this.ordine);
   }
 
 }

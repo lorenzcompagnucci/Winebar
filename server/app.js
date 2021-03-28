@@ -1,24 +1,44 @@
-const mongoose = require('mongoose');
 const express = require('express');
-const port = process.env.PORT || 3001;
+const app = express();
+const path = require('path');
+const csurf = require('csurf');
+const connect = require('./database/dbconn');
+var helmet = require('helmet');
 const cors = require('cors');
-const bodyParser = require('bodyparser');
-const router = express();
+const cookieParser = require('cookie-parser');
 
-mongoose.connect('mongodb+srv://dbUser:dbUserPassword@progwebapp.fdcci.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useUnifiedTopology: true, useNewUrlParser: true});
+require('dotenv').config();
+connect();
+
+var corsOpts = {
+    "origin": "*",
+    "methods": "GET, HEAD, PUT, PATCH, POST, DELETE",
+    "preflightContinue": false,
+    "optionsSuccessStatus": 204
+}
+
+if (process.env.state != "production") {
+    app.use(cors(corsOpts));
+}
+
+app.use(express.json());
+//Lato sicurezza
+app.use(helmet()); 
+app.use(cookieParser());
 
 const viniRoutes = require('./routes/vini');
 const ordiniRoutes = require('./routes/ordini');
 
-router.use(bodyParser.json({extended: true}));
-router.use(cors());
-router.use('/api', viniRoutes);
-router.use('/api', ordiniRoutes);
+app.use('/viniRoutes', viniRoutes);
+app.use('/ordiniRoutes', ordiniRoutes);
 
-router.get('*', (req, res) => {
-    res.send("Errore 404: not found!");
-})
+app.use(function(req, res, next) {
+    res.setHeader("Content-Security-Policy","img-src 'self'  https://maps.googleapis.com/ https://maps.gstatic.com/ http://www.w3.org/ connect-src: none");
+    return next();
+});
 
-router.listen(port, () => {
-    console.log("Listening..");
-})
+app.use(express.static(path.resolve(process.cwd() + '/../client/')));
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(process.cwd() + '/../client/index.html/'))
+});
+app.listen(process.env.PORT, () => console.log("Listening"));

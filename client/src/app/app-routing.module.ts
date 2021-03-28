@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'listino', component: ListinoComponent},
   {path: 'ordine', component: OrdineComponent},
   {path: 'chisiamo', component: AutoriComponent},
-  {path: 'log', component: LoginComponent}
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

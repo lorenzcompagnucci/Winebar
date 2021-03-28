@@ -6,14 +6,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f226bc4c-1b79-4691-8565-0f5392939990" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
+    <list default="true" id="f226bc4c-1b79-4691-8565-0f5392939990" name="Default Changelist" comment="QUARTO COMMIT">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/componenti/homepage/homepage.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/homepage/homepage.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/homepage/homepage.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/homepage/homepage.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/listino/listino.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/listino/listino.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/listino/listino.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/listino/listino.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/navbar/navbar.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/componenti/ordine/ordine.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/ordine/ordine.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/servizi/firebase.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/servizi/firebase.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/ordine.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/ordine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database/dbconn.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/dbconn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/ordini.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/ordini.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/vini.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/vini.js" afterDir="false" />
     </list>
@@ -59,6 +63,9 @@
       <workItem from="1616751897844" duration="21000" />
       <workItem from="1616794393931" duration="918000" />
       <workItem from="1616883722462" duration="15000" />
+      <workItem from="1616899626481" duration="40000" />
+      <workItem from="1616900829602" duration="8000" />
+      <workItem from="1616943515647" duration="6000" />
     </task>
     <task id="LOCAL-00001" summary="SECONDO COMMIT">
       <created>1616751765511</created>
@@ -81,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616794986702</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="QUARTO COMMIT">
+      <created>1616899646929</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1616899646929</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +116,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="SECONDO COMMIT" />
     <MESSAGE value="Terzo commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Terzo commit" />
+    <MESSAGE value="QUARTO COMMIT" />
+    <option name="LAST_COMMIT_MESSAGE" value="QUARTO COMMIT" />
   </component>
 </project>

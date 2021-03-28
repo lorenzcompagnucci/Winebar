@@ -11,14 +11,16 @@ export class ListinoComponent implements OnInit {
 
   public vini: IVino[] = [];
   public errMSG = '';
+  public funziona = "NO";
 
   constructor(private dbService: DBServiceService) { }
 
   ngOnInit(): void {
-    this.dbService.get('/vini').subscribe(
+      this.dbService.get('/winebar/vini').subscribe(
       data => this.vini = data,
       error => this.errMSG = error
     );
+    this.funziona="Si";
   }
 
   public get getVini(): any {
