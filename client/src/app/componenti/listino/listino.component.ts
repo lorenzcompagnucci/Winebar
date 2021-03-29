@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DBServiceService } from 'src/app/servizi/dbservice.service';
+import { Observable } from 'rxjs';
+import { IVino } from 'src/app/interfacce/vino';
+import { DatabaseService } from 'src/app/servizi/database.service';
 
 @Component({
   selector: 'app-listino',
@@ -8,16 +10,19 @@ import { DBServiceService } from 'src/app/servizi/dbservice.service';
 })
 export class ListinoComponent implements OnInit {
 
-  vini = [
+  errMsg = '';
+  vinii = [
     {id: 1, nome: 'vino1', annata: 20121, prezzo: 10.1, tipo: 'bianco'},
     {id: 2, nome: 'vino2', annata: 2010, prezzo: 15, tipo: 'rosso'},
     {id: 3, nome: 'vino3', annata: 1500, prezzo: 100000, tipo: 'fucsia'}
-  ]
+  ];
 
-  constructor() {}
+  public vini: IVino[] = [];
+
+  constructor(private DatabaseService: DatabaseService) {}
 
   ngOnInit(): void {
-    
+    this.DatabaseService.fetchAllVini().subscribe(data => this.vini = data, error => this.errMsg = error);
   }
 
 }

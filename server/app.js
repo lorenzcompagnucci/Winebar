@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const csurf = require('csurf');
 const connect = require('./database/dbconn');
 var helmet = require('helmet');
 const cors = require('cors');
@@ -39,6 +38,6 @@ app.use(function(req, res, next) {
 
 app.use(express.static(path.resolve(process.cwd() + '/../client/')));
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(process.cwd() + '/../client/index.html/'))
+    res.sendFile(path.resolve(process.cwd() + '/../client/src/index.html'))
 });
 app.listen(process.env.PORT, () => console.log("Listening"));

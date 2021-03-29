@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire'
-
-import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { NavbarComponent } from './componenti/navbar/navbar.component';
 import { ListinoComponent } from './componenti/listino/listino.component';
 import { OrdineComponent } from './componenti/ordine/ordine.component';
@@ -42,9 +43,11 @@ import { FirebaseService } from './servizi/firebase.service';
     MatIconModule,
     BrowserModule, 
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

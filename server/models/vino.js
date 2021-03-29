@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 
-const vinoSchema= mongoose.Schema({
-    id : mongoose.Types.ObjectId,
+const viniSchema= mongoose.Schema({
     nome: String,
-    annata: Date,
+    annata: Number,
     prezzo: Number,
     tipo: String,
 })
 
-module.exports = mongoose.model('Vino', vinoSchema);
+module.exports = mongoose.model('Vino', viniSchema);
