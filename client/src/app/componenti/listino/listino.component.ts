@@ -11,11 +11,6 @@ import { DatabaseService } from 'src/app/servizi/database.service';
 export class ListinoComponent implements OnInit {
 
   errMsg = '';
-  vinii = [
-    {id: 1, nome: 'vino1', annata: 20121, prezzo: 10.1, tipo: 'bianco'},
-    {id: 2, nome: 'vino2', annata: 2010, prezzo: 15, tipo: 'rosso'},
-    {id: 3, nome: 'vino3', annata: 1500, prezzo: 100000, tipo: 'fucsia'}
-  ];
 
   public vini: IVino[] = [];
 

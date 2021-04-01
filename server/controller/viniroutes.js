@@ -16,11 +16,11 @@ exports.saveVino = async function(req, res){
         annata: req.body.annata,
         tipo: req.body.tipo
     }); 
-    try{
-       const newVino =await vinoadd.save();
+    try {
+       const newVino = await vinoadd.save();
        res.json(201);
 
-    }catch(err){
+    } catch(err){
         console.log(err);
     }
 

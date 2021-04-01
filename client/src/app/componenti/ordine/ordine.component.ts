@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FirebaseService } from 'src/app/servizi/firebase.service';
 import { IOrdine } from '../../interfacce/ordine';
 import { DatabaseService } from 'src/app/servizi/database.service';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-ordine',
@@ -12,20 +13,14 @@ import { DatabaseService } from 'src/app/servizi/database.service';
 
 export class OrdineComponent implements OnInit {
 
-  constructor(private authService: FirebaseService, private router: Router, private DatabaseService: DatabaseService) {}
+  constructor(private authService: FirebaseService, private router: Router, private DatabaseService: DatabaseService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     if (!this.authService.isLoggedIn) {
       this.router.navigateByUrl('/login');
+    } else {
+      this.router.navigateByUrl('/ordine');
     }
   }
-
-  post(): void {
-    const ordine = {} as IOrdine;
-    ordine.utente = this.authService.getUserEmail;
-    // INSERIMENTO DEI PARAMETRI NELL'OGGETTO
-    
-    this.DatabaseService.postOrdine(ordine);
-  }  
 
 }
