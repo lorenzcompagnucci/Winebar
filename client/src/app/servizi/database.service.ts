@@ -39,7 +39,7 @@ export class DatabaseService {
 
   postOrdine(item: IOrdine): Observable<any> {
     return this.http.post<IOrdine>(this.urlOrdini, item, this.httpOptions).
-    pipe(catchError(this.errorHandler.handleError<any>("psotOrdine")))
+    pipe(catchError(this.errorHandler.handleError<any>("postOrdine")))
   }
  
 }

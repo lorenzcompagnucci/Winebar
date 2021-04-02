@@ -4,5 +4,7 @@ const router = express.Router();
 
 //Ritorna tutti i vini
 router.get('/', controller.getVini);
+//inserisce un vino
 router.post('/',controller.saveVino);
+
 module.exports = router;

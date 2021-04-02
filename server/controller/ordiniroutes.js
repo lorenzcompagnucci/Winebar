@@ -1,8 +1,17 @@
 const Ordine = require('../models/ordine');
 const Vino = require('../models/vino');
 
-exports.saveNewOrder = async function(req, res) {
-    const ordine = defineOrder(req);
+exports.getOrdini = async function (req, res) {
+    try {
+        const ordini = await Ordine.find();
+        res.json(ordini);
+    } catch(err) {
+        res.status(500).json({message: err.message});
+    }
+}
+
+exports.saveOrder = async function(req, res) {
+    const ordine = defineOrdine(req);
     if (ordine == null) {
         res.status(400).json({message: "Ordine null"});
     } else {
