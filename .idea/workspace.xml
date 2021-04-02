@@ -24,6 +24,7 @@
         <option value="Alessandro" />
       </list>
     </option>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1qI0L18VLOoOqQnuh7qxUYkjz17" />
@@ -60,6 +61,7 @@
       <workItem from="1616947935360" duration="37000" />
       <workItem from="1616950610191" duration="13000" />
       <workItem from="1617374217223" duration="95000" />
+      <workItem from="1617374553655" duration="302000" />
     </task>
     <task id="LOCAL-00001" summary="SECONDO COMMIT">
       <created>1616751765511</created>
@@ -117,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617374282155</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Listino">
+      <created>1617374794356</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1617374794356</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
