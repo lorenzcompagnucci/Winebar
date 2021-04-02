@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FirebaseService } from 'src/app/servizi/firebase.service';
 import { IOrdine } from '../../interfacce/ordine';
 import { DatabaseService } from 'src/app/servizi/database.service';
+import { FormArray, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-ordine',
@@ -12,20 +13,22 @@ import { DatabaseService } from 'src/app/servizi/database.service';
 
 export class OrdineComponent implements OnInit {
 
+ 
+  errorMsg = ''; 
+  orderForm!: FormGroup;
+
   constructor(private authService: FirebaseService, private router: Router, private DatabaseService: DatabaseService) {}
 
   ngOnInit(): void {
-    if (!this.authService.isLoggedIn) {
-      this.router.navigateByUrl('/login');
-    }
+  //  if (!this.authService.isLoggedIn) {
+   //   this.router.navigateByUrl('/login');
+    //}
   }
-
-  post(): void {
-    const ordine = {} as IOrdine;
-    ordine.utente = this.authService.getUserEmail;
-    // INSERIMENTO DEI PARAMETRI NELL'OGGETTO
-    
-    this.DatabaseService.postOrdine(ordine);
-  }  
-
+  
+  addTub(): void {
+    (<FormArray>this.orderForm.get('orders')).push(this.addTubFormGroup());
+  }
+  addTubFormGroup(): import("@angular/forms").AbstractControl {
+    throw new Error('Method not implemented.');
+  }
 }

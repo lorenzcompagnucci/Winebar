@@ -1,22 +1,47 @@
+
 .box1{
-    margin-left: 450px;
-    margin-top: 100px ;
-    
+        margin-top: 200px;
+        margin-left: 400px ;
+        background: rgb(238, 238, 238);
+        width:300px;
+        padding: 10px;
+        box-shadow: 5px 5px 10px 2px #333333;
+        -webkit-box-shadow: 5px 5px 10px 2px #333333;
+        -moz-box-shadow: 5px 5px 10px 2px #333333;
+        
  }
  
  
  .box2{
-     margin-top: -400px ;
+     margin-top: -401px ;
      margin-left: 50px;
+        background: rgb(238, 238, 238);
+        width: 300px;
+        padding: 10px;
+        box-shadow: 5px 5px 10px 2px #333333;
+        -webkit-box-shadow: 5px 5px 10px 2px #333333;
+        -moz-box-shadow: 5px 5px 10px 2px #333333;
  }
  .box3{
  
-     margin-left: 850px;
-     margin-top: -400px;
+     margin-left: 750px;
+     margin-top: -406px;
+     background: rgb(238, 238, 238);
+        width: 300px;
+        padding: 10px;
+        box-shadow: 5px 5px 10px 2px #333333;
+        -webkit-box-shadow: 5px 5px 10px 2px #333333;
+        -moz-box-shadow: 5px 5px 10px 2px #333333;
  }
  
  .box4{
  
-     margin-left: 1200px;
-     margin-top: -400px;
+     margin-left: 1110px;
+     margin-top: -404px;
+     background: rgb(238, 238, 238);
+     width: 300px;
+     padding: 10px;
+     box-shadow: 5px 5px 10px 2px #333333;
+     -webkit-box-shadow: 5px 5px 10px 2px #333333;
+     -moz-box-shadow: 5px 5px 10px 2px #333333;
  }

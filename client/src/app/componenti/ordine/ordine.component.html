@@ -1,9 +1,17 @@
-<div id="myDIV" class="header">
-    <h2>La mia lista Ordine</h2>
-    <input type="text" id="myInput" placeholder="Inserisci l'ID del vino...">
-    <input type="text" id="myInput" placeholder="inserisci la quantità...">
-    <span onclick="newElement()" class="addBtn">Aggiungi alla lista</span>
-</div>
+ <h1 style="text-align: center;">Ordina</h1>
+  <div class="alert alert-danger" *ngIf="errorMsg">
+    {{errorMsg}}
+  </div>
+  <!-- {{orderForm.value | json}} -->
   
-<ul id="myUL">
-</ul>
+  <div class="form-group">
+      <div class="ion-align-items-center">
+      <div class="ion-text-center">
+          <button  color="success" type="button" (click)="addTub()">
+              Aggiungi Bottiglia
+          </button>
+        </div>
+  </div>
+  </div>
+
+ 
