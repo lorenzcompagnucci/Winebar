@@ -6,7 +6,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f226bc4c-1b79-4691-8565-0f5392939990" name="Default Changelist" comment="" />
+    <list default="true" id="f226bc4c-1b79-4691-8565-0f5392939990" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/autori/autori.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/autori/autori.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/autori/autori.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/autori/autori.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/login/login.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/navbar/navbar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/navbar/navbar.component.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +47,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\CLion 2020.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Users\Alessandro\Downloads\ProgWebApp\client\node_modules\typescript\lib" />
   </component>
   <component name="SQLPlugin.ProjectConfiguration">
     <queries />
@@ -61,7 +71,8 @@
       <workItem from="1616947935360" duration="37000" />
       <workItem from="1616950610191" duration="13000" />
       <workItem from="1617374217223" duration="95000" />
-      <workItem from="1617374553655" duration="302000" />
+      <workItem from="1617374553655" duration="568000" />
+      <workItem from="1617722121857" duration="230000" />
     </task>
     <task id="LOCAL-00001" summary="SECONDO COMMIT">
       <created>1616751765511</created>
@@ -126,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617374794356</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Listino">
+      <created>1617374889993</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1617374889993</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,11 +153,41 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />

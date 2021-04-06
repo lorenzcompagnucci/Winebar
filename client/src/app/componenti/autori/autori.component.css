@@ -1,5 +1,59 @@
-
 .box1{
+    position: relative;
+    top: 100px;
+    margin-left: 400px ;
+    background: rgb(238, 238, 238);
+    width:300px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px 2px #333333;
+    -webkit-box-shadow: 5px 5px 10px 2px #333333;
+    -moz-box-shadow: 5px 5px 10px 2px #333333;
+    
+}
+
+
+.box2{
+    position: relative;
+ top: -303px;
+ left: 50px;
+    background: rgb(238, 238, 238);
+    width: 300px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px 2px #333333;
+    -webkit-box-shadow: 5px 5px 10px 2px #333333;
+    -moz-box-shadow: 5px 5px 10px 2px #333333;
+}
+.box3{
+    position: relative;
+ top: -706px;
+ left: 800px;
+ background: rgb(238, 238, 238);
+    width: 300px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px 2px #333333;
+    -webkit-box-shadow: 5px 5px 10px 2px #333333;
+    -moz-box-shadow: 5px 5px 10px 2px #333333;
+}
+
+.box4{
+    position: relative;
+ top: -1109px;
+ left: 1150px;
+ background: rgb(238, 238, 238);
+ width: 300px;
+ padding: 10px;
+ box-shadow: 5px 5px 10px 2px #333333;
+ -webkit-box-shadow: 5px 5px 10px 2px #333333;
+ -moz-box-shadow: 5px 5px 10px 2px #333333;
+}
+
+body {
+    background-color: #e2d3d3;
+}
+
+
+  /**
+  .box1{
         margin-top: 200px;
         margin-left: 400px ;
         background: rgb(238, 238, 238);
@@ -45,3 +99,4 @@
      -webkit-box-shadow: 5px 5px 10px 2px #333333;
      -moz-box-shadow: 5px 5px 10px 2px #333333;
  }
+  */
