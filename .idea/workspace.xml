@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
@@ -8,14 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f226bc4c-1b79-4691-8565-0f5392939990" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/autori/autori.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/autori/autori.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/autori/autori.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/autori/autori.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/login/login.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/navbar/navbar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/componenti/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/componenti/navbar/navbar.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +68,7 @@
       <workItem from="1617374217223" duration="95000" />
       <workItem from="1617374553655" duration="568000" />
       <workItem from="1617722121857" duration="230000" />
+      <workItem from="1617722382177" duration="381000" />
     </task>
     <task id="LOCAL-00001" summary="SECONDO COMMIT">
       <created>1616751765511</created>
@@ -144,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617374889993</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Altro commit">
+      <created>1617722517978</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1617722517978</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +181,30 @@
             </State>
           </value>
         </entry>
+        <entry key="2">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -188,6 +215,7 @@
     <option name="OPEN_GENERIC_TABS">
       <map>
         <entry key="1" value="TOOL_WINDOW" />
+        <entry key="2" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
@@ -197,6 +225,7 @@
     <MESSAGE value="Terzo commit" />
     <MESSAGE value="QUARTO COMMIT" />
     <MESSAGE value="Listino" />
-    <option name="LAST_COMMIT_MESSAGE" value="Listino" />
+    <MESSAGE value="Altro commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Altro commit" />
   </component>
 </project>
