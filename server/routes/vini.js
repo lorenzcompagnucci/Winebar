@@ -6,5 +6,10 @@ const router = express.Router();
 router.get('/', controller.getVini);
 //inserisce un vino
 router.post('/',controller.saveVino);
+//elimina un vino
+router.delete('/:id', controller.getVino, controller.deleteVino);
+//aggiorna un vino
+router.patch('/:id', controller.updateVino);
+
 
 module.exports = router;

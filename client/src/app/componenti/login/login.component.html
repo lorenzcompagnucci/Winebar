@@ -1,25 +1,21 @@
-
-
-<!-- The Modal -->
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'"
-class="close" title="Close Modal">&times;</span>
-
-  <!-- Modal Content -->
-  <form class="modal-content animate" action="/action_page.php">
- 
-    
-     <input type="text" class="form-control" placeholder="email" aria-label="Large" aria-describedby="basic-addon1" >
-   
-     <div class="mx-auto" style="margin-top:50px ;">
-      <input type="text" class="form-control" placeholder="password" aria-label="Large" aria-describedby="basic-addon1" >
-    </div>
-
-    <div class="mx-auto" style="margin-top:100px ;">
-      <div class="container">
-        <button id="button"></button>
-      </div>
+<body >
+  <div class="box" >
+  <span  style="size:30px" style="font-family:Times New Roman">
+    <mat-icon>wine_bar</mat-icon>JOIN US
+  </span>
+  <div class="mx-auto" style="margin-top:20px ;">
+    <input type="text" class="form-control" placeholder="  Inserisci una Email valida..." aria-label="Large" aria-describedby="basic-addon1" #email >
   </div>
+  <div class="mx-auto" style="margin-top:50px ;">
+    <input type="password" class="form-control" placeholder="  Inserisci una Password valida..." aria-label="Large" aria-describedby="basic-addon1" #password >
+  </div>
+  <div class="mx-auto" style="margin-top:100px ;">
+    <button mat-raised-button class="button"  (click) = "onSignup(email.value, password.value)">
+      <span>Registrati</span>
+    </button>
+    <button mat-raised-button class="button" (click) = "onSignin(email.value, password.value)">
+      <span>Login</span>
+    </button>
+  </div>
+  
 
-  </form>
-</div>

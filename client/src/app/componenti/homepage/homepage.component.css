@@ -2,40 +2,42 @@ html,
 body
 {
 height: 100%;
+background-color: #e2d3d3;
 }
 
+
+  
 /*Sfondo HomePage*/
 header
 {
 position:relative;
 height: 100%;
-background:#fff url(../../../assets/immagini/VignetoVicino.jpg) no-repeat center center;
+
 background-size:cover;
 box-shadow:inset 0 -1px 5px rgba(0,0,0,0.6);
 }
 
-/*Mette il link centrale*/
-#freccia-header
-{
-position: absolute;
-bottom: 0;
-width: 100%;
+.box{
+    padding: 15px;
+    margin: 15px;
+    width: 550px;
+    height: 150px;
+    background-color: rgba(195, 206, 101, 0.521);
+    color: black;
+    border-width: 5px;
+    border-radius: 30px 15px 30px 15px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
-/*Mette il link in basso alla pagina*/
-#freccia-header a
-{
-display: block;
-width: 100px;
-height: 250px;
-margin: 0 auto;
 
-} 
+
 
 /*Mette il testo della homepage in mezzo un po a sinistra*/
 #testo-header
 {
 position: absolute;
 top: 100px;
-left: 230px;
+left: 130px;
 }

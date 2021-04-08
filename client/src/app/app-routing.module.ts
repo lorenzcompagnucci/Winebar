@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AutoriComponent } from './componenti/autori/autori.component';
 import { HomepageComponent } from './componenti/homepage/homepage.component';
 import { ListinoComponent } from './componenti/listino/listino.component';
+import { LoginComponent } from './componenti/login/login.component';
 import { OrdineComponent } from './componenti/ordine/ordine.component';
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'listino', component: ListinoComponent},
   {path: 'ordine', component: OrdineComponent},
   {path: 'chisiamo', component: AutoriComponent},
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

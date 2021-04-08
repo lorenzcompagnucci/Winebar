@@ -6,5 +6,10 @@ let controller = require('../controller/ordiniroutes');
 router.get('/', controller.getOrdini);
 //Aggiunta di un ordine
 router.post('/', controller.saveOrder);
+//elimina un ordine
+router.delete('/:id', controller.getOrdine, controller.deleteOrdine);
+//aggiorna un ordine
+router.patch('/:id', controller.updateOrdine);
+
 
 module.exports = router;

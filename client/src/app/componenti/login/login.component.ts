@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   private provider: any;
   isSignedIn = false;
 
-  constructor(private firebaseService: FirebaseService, private router: Router, private rote: ActivatedRoute) {
+  constructor(private firebaseService: FirebaseService, private router: Router, private route: ActivatedRoute) {
 
   }
 

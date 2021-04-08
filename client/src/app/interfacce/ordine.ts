@@ -1,5 +1,5 @@
 export interface IOrdine {
-    id: string;
+    _id: string;
     utente: string;
     importo: number;
     vini: string[];
