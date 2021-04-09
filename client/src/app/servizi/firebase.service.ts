@@ -16,6 +16,7 @@ export class FirebaseService {
     .then(res => {
       this.isLoggedIn = true
       localStorage.setItem('user', JSON.stringify(res.user))
+      alert("LOGIN ESEGUITO");
     })
     this.email = email;
   }
@@ -25,14 +26,20 @@ export class FirebaseService {
     .then(res => {
       this.isLoggedIn = true
       localStorage.setItem('user', JSON.stringify(res.user))
+      alert("REGISTRAZIONE ESEGUITA");
     })
     this.email = email;
   }
 
   logout() {
-    this.firebaseAuth.signOut();
-    localStorage.removeItem('user');
-    this.isLoggedIn = false;
+    if (!this.isLoggedIn) {
+      alert("NON TI SEI ANCORA AUTENTICATO!");
+    } else {
+      this.firebaseAuth.signOut();
+      localStorage.removeItem('user');
+      this.isLoggedIn = false;
+      alert("LOGOUT ESEGUITO!");
+    }
   }
 
   public get getUserEmail(): string {
