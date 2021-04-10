@@ -10,10 +10,10 @@
 					<tr *ngFor="let vino of carrello">
 		  				<td>{{vino.nome}}</td>
 		  				<td>{{vino.prezzo}}</td>
-						<button type="button" class="btn btn-default" (click)="rimuoviBottiglia(vino)">Rimuovi</button>
+						<button type="button" class="btn btn-default" (click)="rimuoviDalCarrello(vino)">Rimuovi</button>
 					</tr>
 				</ul>
-				<button class="button button2">Acquista</button>
+				<button class="button button2" (click) = "ordina()">Acquista</button>
 	  		</div>
 			<div class="left-area" *ngIf = "carrelloVuoto()">
 				<P>IL CARRELLO E' VUOTO</P>

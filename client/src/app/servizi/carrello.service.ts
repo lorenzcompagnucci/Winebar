@@ -8,13 +8,16 @@ import { IVino } from '../interfacce/vino';
 
 export class CarrelloService {
 
-  private _listinoSource = new Subject<IVino>();
-  listinoSource$ = this._listinoSource.asObservable();
+  private content = new Subject<IVino>();
+  public share = this.content.asObservable();
+  public carrello: IVino[] = [];
 
-  constructor() {}
+  constructor() {
+    this.share.subscribe(x => this.carrello.push(x));
+  }
 
-  sendSource(source: IVino) {
-    this._listinoSource.next(source);
+  updateData(source: IVino) {
+    this.content.next(source);
   }
 
 }
