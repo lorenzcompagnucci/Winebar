@@ -13,7 +13,10 @@
 						<button type="button" class="btn btn-default" (click)="rimuoviDalCarrello(vino)">Rimuovi</button>
 					</tr>
 				</ul>
-				<button class="button button2" (click) = "ordina()">Acquista</button>
+				<input type="text" placeholder="telefono" size="10" #telefono>
+				<input type="text" placeholder="citta" #citta>
+				<input type="text" placeholder="via e civico" #via>
+				<button class="button button2" (click) = "ordina(telefono.value, citta.value, via.value)">Acquista</button>
 	  		</div>
 			<div class="left-area" *ngIf = "carrelloVuoto()">
 				<P>IL CARRELLO E' VUOTO</P>

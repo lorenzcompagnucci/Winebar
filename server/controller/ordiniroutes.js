@@ -27,6 +27,9 @@ exports.getOrdine = async function (req, res) {
 exports.saveOrder = async function(req, res) {
     const ordineadd=new Ordine({
         utente: req.body.utente,
+        telefono: req.body.telefono,
+        citta: req.body.citta,
+        via: req.body.via,
         importo: req.body.importo,
         vini: req.body.vini
     }); 
@@ -40,10 +43,22 @@ exports.saveOrder = async function(req, res) {
 
 exports.updateOrdine = async function(req, res) {
     try {
-        const {utente, importo, vini} = req.body;
+        const {utente, telefono, citta, via, importo, vini} = req.body;
         if (utente) {
             await Ordine.updateOne({_id : req.params.id},
                 { $set:{"utente": req.body.utente}})
+        }
+        if (telefono) {
+            await Ordine.updateOne({_id : req.params.id},
+                { $set:{"utente": req.body.telefono}})
+        }
+        if (citta) {
+            await Ordine.updateOne({_id : req.params.id},
+                { $set:{"utente": req.body.citta}})
+        }
+        if (via) {
+            await Ordine.updateOne({_id : req.params.id},
+                { $set:{"utente": req.body.via}})
         }
         if (importo) {
             await Vino.updateOne({_id : req.params.id},

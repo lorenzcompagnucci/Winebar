@@ -33,15 +33,20 @@ export class OrdineComponent implements OnInit {
     }
   }
 
-  ordina(): void {
-    if (this.carrello.length >= 1) {
-      let ordine: IOrdine = {_id: '', utente: '', importo: 0, vini: []};
+  ordina(telefono: string, citta: string, via: string): void {
+    if (telefono.length == 10 && citta.length >= 1 || via.length >= 1) {
+      let ordine: IOrdine = {_id: '', utente: '', telefono: '', citta: '', via: '', importo: 0, vini: []};
       ordine.utente = this.firebaseService.getUserEmail;
+      ordine.telefono = telefono;
+      ordine.citta = citta;
+      ordine.via = via;
       for (var vino of this.carrello) {
         ordine.importo += vino.prezzo;
         ordine.vini.push(vino._id);
       }
       this.inviaOrdine(ordine);
+    } else {
+      alert("C'è un errore nei dati inseriti");
     }
   }
 
@@ -49,8 +54,9 @@ export class OrdineComponent implements OnInit {
     this.databaseService.postOrdine(ordine).subscribe(
       response => {
         console.log('Ordine inserito!');
-        this.carrello = [];
+        this.carrelloService.carrello = [];
         this.router.navigateByUrl('/homepage')
+        alert("Il tuo ordine è stato ricevuto!");
       },
       error => console.log('ERRORE: ', error)
     )
