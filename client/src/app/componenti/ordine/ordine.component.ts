@@ -34,7 +34,7 @@ export class OrdineComponent implements OnInit {
   }
 
   ordina(telefono: string, citta: string, via: string): void {
-    if (telefono.length == 10 && citta.length >= 1 || via.length >= 1) {
+    if (telefono.length == 10 && citta.length >= 1 && via.length >= 1) {
       let ordine: IOrdine = {_id: '', utente: '', telefono: '', citta: '', via: '', importo: 0, vini: []};
       ordine.utente = this.firebaseService.getUserEmail;
       ordine.telefono = telefono;
