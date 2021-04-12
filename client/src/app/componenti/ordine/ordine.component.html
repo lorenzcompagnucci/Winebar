@@ -1,4 +1,5 @@
 	<html>
+		<body>
 		<div class="box">
 		<div class="table-title">
 		  <h3><mat-icon>wine_bar</mat-icon>CARRELLO</h3>
@@ -21,7 +22,7 @@
 				</ul>
 				<input type="text" placeholder="telefono" size="10" #telefono>
 				<input type="text" placeholder="citta" #citta>
-				<input type="text" placeholder="via e civico" #via>
+				<input type="text" placeholder="indirizzo" #via>
 				<button class="button button2" (click) = "ordina(telefono.value, citta.value, via.value)">Acquista</button>
 	  		</div>
 			<div class="left-area" *ngIf = "carrelloVuoto()">
@@ -29,6 +30,7 @@
 			</div>
 		</div>
 	</div>
+		</body>
 </html>
 
 <!--

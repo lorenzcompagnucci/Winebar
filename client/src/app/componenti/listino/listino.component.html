@@ -10,6 +10,10 @@
 		<h3><mat-icon>wine_bar</mat-icon>Listino</h3>
 	</div>
 	<table class="table-fill">
+		<ul id="ss_elem_list"
+				  tabindex="0"
+				  role="listbox"
+				  >
 		<thead>
 			<tr>
 				<th class="text-left">Nome</th>
@@ -28,8 +32,13 @@
 				<td class="text-left">{{vino.prezzo}}€</td>
 				<td class="text-left">
 				<button type="button" class="btn btn-default" (click)="aggiungiAlCarrello(vino)">Aggiungi</button></td>
+
 			</tr>
 		<tr>
 		</tbody>
+			  </ul>
+		
+		
 	</table>
+
 </body>

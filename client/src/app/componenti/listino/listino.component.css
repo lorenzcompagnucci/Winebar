@@ -6,6 +6,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   text-rendering: optimizeLegibility;
+ 
 }
 
 div.table-title {
@@ -30,15 +31,14 @@ div.table-title {
 /*** Table Styles **/
 
 .table-fill {
-  background: white;
+  
   border-radius:3px;
   border-collapse: collapse;
-  height: 320px;
+  height: 600px;
   margin: auto;
   max-width: 600px;
   padding:5px;
   width: 100%;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   animation: float 5s infinite;
 }
  
@@ -122,24 +122,34 @@ th.text-left {
   text-align: left;
 }
 
-th.text-center {
-  text-align: center;
+
+
+
+[role="listbox"] {
+  min-height: 38em;
+  padding: 0;
+  background:  #e2d3d3;
+  border: 1px solid  #e2d3d3;
 }
 
-th.text-right {
-  text-align: right;
+
+#ss_elem_list {
+  max-height: 18em;
+  overflow-y: auto;
+  position: relative;
 }
 
-td.text-left {
-  text-align: left;
-}
 
-td.text-center {
-  text-align: center;
-}
 
-td.text-right {
-  text-align: right;
-}
+
+
+
+
+
+
+
+
+
+
 
 
