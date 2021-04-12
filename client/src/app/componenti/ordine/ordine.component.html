@@ -14,7 +14,7 @@
 					<tr *ngFor="let vino of carrello">
 						 <td class="text-left">{{vino.nome}}</td>
 		  				 <td class="text-left">{{vino.prezzo}}€</td>
-						   <td class="text-left"><button type="button" class="btn btn-default" (click)="rimuoviDalCarrello(vino)">Rimuovi</button></td>
+						   <td class="text-left"><button mat-raised-button type="button" class="btn btn-default button1" (click)="rimuoviDalCarrello(vino)">Rimuovi</button></td>
 					</tr>
 				</tbody>
 						
