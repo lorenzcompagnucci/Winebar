@@ -16,7 +16,7 @@ export class OrdineComponent implements OnInit {
 
   carrello: IVino[] = [];
 
-  constructor(private carrelloService: CarrelloService, private firebaseService: FirebaseService, private databaseService: DatabaseService, private router: Router) {}
+  constructor(public carrelloService: CarrelloService, private firebaseService: FirebaseService, private databaseService: DatabaseService, private router: Router) {}
 
   ngOnInit(): void {
     if (!this.firebaseService.isLoggedIn) {
@@ -26,15 +26,12 @@ export class OrdineComponent implements OnInit {
     }
   }
 
-  rimuoviDalCarrello(vino: IVino) {
-    const posizione: number = this.carrelloService.carrello.indexOf(vino);
-    if (posizione !== -1) {
-      this.carrelloService.carrello.splice(posizione, 1);
-    }
+  rimuoviDalCarrello(bottiglia: IVino) {
+    this.carrelloService.rimuoviBottiglia(bottiglia);
   }
 
   ordina(telefono: string, citta: string, via: string): void {
-    if (telefono.length == 10 && citta.length >= 1 && via.length >= 1) {
+    if (this.controllaDatiSpedizione(telefono, citta, via)) {
       let ordine: IOrdine = {_id: '', utente: '', telefono: '', citta: '', via: '', importo: 0, vini: []};
       ordine.utente = this.firebaseService.getUserEmail;
       ordine.telefono = telefono;
@@ -45,8 +42,6 @@ export class OrdineComponent implements OnInit {
         ordine.vini.push(vino._id);
       }
       this.inviaOrdine(ordine);
-    } else {
-      alert("C'è un errore nei dati inseriti");
     }
   }
 
@@ -60,6 +55,22 @@ export class OrdineComponent implements OnInit {
       },
       error => console.log('ERRORE: ', error)
     )
+  }
+
+  controllaDatiSpedizione(telefono: string, citta: string, via: string): boolean {
+    if (telefono.length !== 10) {
+      alert("Inserire un numero di telefono corretto.");
+      return false;
+    }
+    if (citta.length < 1) {
+      alert("Inserire la città.");
+      return false;
+    }
+    if (via.length < 1) {
+      alert("Inserire la via e il civico.");
+      return false;
+    }
+    return true;
   }
 
   carrelloVuoto(): boolean {
