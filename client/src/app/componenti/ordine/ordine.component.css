@@ -28,13 +28,13 @@ padding: 10px;
   border-radius: 30px 30px 30px 30px
 }
 .box2{
-  position: absolute;
- top: 150px;
- right:350px;
+  position: relative;
+ top: -500px;
+ left: 790px;
   text-align: center;
   padding: 15px;
   margin: 15px;
-  width: 700px;
+  width: 500px;
   height: 350px;
   background-color: rgba(195, 206, 101, 0.521);
  border-radius: 15vmin ;
