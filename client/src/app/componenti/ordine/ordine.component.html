@@ -11,7 +11,7 @@
 						<table class="table-fill">
 							<thead>
 							<tbody class="table-hover">
-								<tr *ngFor="let vino of carrello">
+								<tr *ngFor="let vino of this.carrelloService.carrello">
 									<td class="text-left">{{vino.nome}}</td>
 		  				 			<td class="text-left">{{vino.prezzo}}€</td>
 						   			<td class="text-left"><button mat-raised-button type="button" class="btn btn-default button1" (click)="rimuoviDalCarrello(vino)">Rimuovi</button></td>
@@ -23,7 +23,7 @@
 					<input type="text" placeholder="citta" #citta>
 					<input type="text" placeholder="indirizzo" #via>
 					<button class="button button2" (click) = "ordina(telefono.value, citta.value, via.value)">Acquista</button>
-					<p>IL TOTALE E' €{{this.carrelloService.totale}}</p>
+					<p>IL TOTALE E' €{{this.carrelloService.getTotale()}}</p>
 	  			</div>
 				<div class="left-area" *ngIf = "carrelloVuoto()">
 					<P>IL CARRELLO E' VUOTO</P>
@@ -32,13 +32,13 @@
 		</div>
 		<div class ="box2"> 
 			<br><br>
-		<h1> <strong>Aggiungere i vini da acquistare nella lista carrello </strong></h1>
-	<h1><strong>Per procedere con l'acquisto inserire:</strong></h1>
-	<h1><em>Telefono</em></h1>
-	<h1><em>Città</em></h1>
-	<h1><em>Indirizzo</em></h1>
-	<h1><strong>E infine brinda in compagnia!</strong> </h1>
-	</div>
+			<h1> <strong>Aggiungere i vini da acquistare nella lista carrello </strong></h1>
+			<h1><strong>Per procedere con l'acquisto inserire:</strong></h1>
+			<h1><em>Telefono</em></h1>
+			<h1><em>Città</em></h1>
+			<h1><em>Indirizzo</em></h1>
+			<h1><strong>E infine brinda in compagnia!</strong></h1>
+		</div>
 	</body>
 </html>
 

@@ -14,15 +14,11 @@ import { IOrdine } from '../../interfacce/ordine';
 
 export class OrdineComponent implements OnInit {
 
-  carrello: IVino[] = [];
-
   constructor(public carrelloService: CarrelloService, private firebaseService: FirebaseService, private databaseService: DatabaseService, private router: Router) {}
 
   ngOnInit(): void {
     if (!this.firebaseService.isLoggedIn) {
       this.router.navigateByUrl('/login');
-    } else {
-      this.carrello = this.carrelloService.carrello;
     }
   }
 
@@ -37,7 +33,7 @@ export class OrdineComponent implements OnInit {
       ordine.telefono = telefono;
       ordine.citta = citta;
       ordine.via = via;
-      for (var vino of this.carrello) {
+      for (var vino of this.carrelloService.carrello) {
         ordine.importo += vino.prezzo;
         ordine.vini.push(vino._id);
       }

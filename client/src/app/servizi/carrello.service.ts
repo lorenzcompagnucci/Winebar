@@ -29,4 +29,8 @@ export class CarrelloService {
     }
   }
 
+  getTotale(): any {
+    return this.totale.toFixed(2);
+  }
+
 }
