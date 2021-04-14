@@ -10,35 +10,27 @@
 		<h3><mat-icon>wine_bar</mat-icon>Listino</h3>
 	</div>
 	<table class="table-fill">
-		<ul id="ss_elem_list"
-				  tabindex="0"
-				  role="listbox"
-				  >
-		<thead>
-			<tr>
-				<th class="text-left">Nome</th>
-				<th class="text-left">Anno</th>
-				<th class="text-left">tipo</th>
-				<th class="text-left">Prezzo</th>
-				<th class="text-left">Ordina</th>
-			</tr>
-		</thead>
-		<tbody class="table-hover">
-		<tr>
-			<tr *ngFor="let vino of vini">
-				<td class="text-left">{{vino.nome}}</td>
-				<td class="text-left">{{vino.annata}}</td>
-				<td class="text-left">{{vino.tipo}}</td>
-				<td class="text-left">{{vino.prezzo}}€</td>
-				<td class="text-left">
-				<button  mat-raised-button class="button button1" (click)="aggiungiAlCarrello(vino)">Aggiungi</button></td>
-
-			</tr>
-		<tr>
-		</tbody>
-			  </ul>
-		
-		
+		<ul id="ss_elem_list" tabindex="0" role="listbox">
+			<thead>
+				<tr>
+					<th class="text-left">Nome</th>
+					<th class="text-left">Anno</th>
+					<th class="text-left">Tipo</th>
+					<th class="text-left">Prezzo</th>
+					<th class="text-left">Ordina</th>
+				</tr>
+			</thead>
+			<tbody class="table-hover">
+				<tr>
+				<tr *ngFor="let vino of vini">
+					<td class="text-left">{{vino.nome}}</td>
+					<td class="text-left">{{vino.annata}}</td>
+					<td class="text-left">{{vino.tipo}}</td>
+					<td class="text-left">{{vino.prezzo}}€</td>
+					<td><button  mat-raised-button class="button button1" (click)="aggiungiAlCarrello(vino)">Aggiungi</button></td>
+				</tr>
+				<tr>
+			</tbody>
+		</ul>
 	</table>
-
 </body>

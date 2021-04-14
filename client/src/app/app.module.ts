@@ -16,6 +16,8 @@ import { OrdineComponent } from './componenti/ordine/ordine.component';
 import { LoginComponent } from './componenti/login/login.component';
 import { AutoriComponent } from './componenti/autori/autori.component';
 import { FirebaseService } from './servizi/firebase.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,13 @@ import { FirebaseService } from './servizi/firebase.service';
     BrowserModule, 
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]
