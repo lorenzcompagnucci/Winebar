@@ -14,8 +14,8 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  handleLogout() {
-    this.firebaseService.logout();
+  logOut() {
+    this.firebaseService.logOut();
   }
 
 }

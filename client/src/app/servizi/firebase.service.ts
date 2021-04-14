@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth'
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -7,52 +9,39 @@ import { AngularFireAuth } from '@angular/fire/auth'
 
 export class FirebaseService {
 
-  private email = '';
+  private user: any;
   isLoggedIn = false
 
-  constructor(public firebaseAuth: AngularFireAuth) { }
+  constructor(private firebaseAuth: AngularFireAuth) {
+  }
 
-  async signin(email: string, password: string) {
+  async logIn() {
     if (!this.isLoggedIn) {
-      await this.firebaseAuth.signInWithEmailAndPassword(email, password)
-      .then(res => {
-        this.isLoggedIn = true
-        localStorage.setItem('user', JSON.stringify(res.user))
-        alert("LOGIN ESEGUITO");
+      firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()).then((result) => {
+        this.user = result.user;
+        this.isLoggedIn = true;
+        alert("BENVENUTO!");
+      }).catch(function(error) {
+        console.log(error);
       })
-      this.email = email;
     } else {
-      alert("HAI GIA' ESEGUITO IL LOGIN"); 
+      alert("TI SEI GIA' AUTENTICATO");
     }
   }
 
-  async signup(email: string, password: string) {
-    if (!this.isLoggedIn) {
-      await this.firebaseAuth.createUserWithEmailAndPassword(email, password)
-      .then(res => {
-        this.isLoggedIn = true
-        localStorage.setItem('user', JSON.stringify(res.user))
-        alert("REGISTRAZIONE ESEGUITA");
-      })
-    this.email = email;
-    } else {
-      alert("HAI GIA' ESEGUITO IL LOGIN"); 
-    }
-  }
-
-  logout() {
+  async logOut() {
     if (this.isLoggedIn) {
-      this.firebaseAuth.signOut();
-      localStorage.removeItem('user');
-      this.isLoggedIn = false;
-      alert("LOGOUT ESEGUITO");
+      firebase.auth().signOut().then(() => {
+        this.isLoggedIn = false;
+        alert("ARRIVEDERCI!");
+      })
     } else {
       alert("NON TI SEI ANCORA AUTENTICATO");
     }
   }
 
   public get getUserEmail(): string {
-    return this.email;
+    return this.user.email;
   }
 
 }

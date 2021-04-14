@@ -3,17 +3,9 @@
   <span  style="size:30px" style="font-family:Times New Roman">
     <mat-icon>wine_bar</mat-icon>JOIN US
   </span>
-  <div class="mx-auto" style="margin-top:20px ;">
-    <input type="text" class="form-control" placeholder="  Inserisci una Email valida..." aria-label="Large" aria-describedby="basic-addon1" #email >
-  </div>
-  <div class="mx-auto" style="margin-top:50px ;">
-    <input type="password" class="form-control" placeholder="  Inserisci una Password valida..." aria-label="Large" aria-describedby="basic-addon1" #password >
-  </div>
   <div class="mx-auto" style="margin-top:100px ;">
-    <button mat-raised-button class="button"  (click) = "onSignup(email.value, password.value)">
-      <span>Registrati</span>
-    </button>
-    <button mat-raised-button class="button" (click) = "onSignin(email.value, password.value)">
-      <span>Login</span>
-    </button>
+    <a class="btn btn-outline-dark" (click)="logIn()" role="button" style="width: 100%; margin-top: 10px;padding: 12px;">
+      <img alt="Google logo" src="../../../assets/immagini/google.jpg">
+    </a>
+  </div>  
 </div>

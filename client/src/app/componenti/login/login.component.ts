@@ -15,13 +15,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  async onSignup(email: string, password: string) {
-    await this.firebaseService.signup(email, password);
-    this.router.navigateByUrl('/homepage');
-  }
-
-  async onSignin(email: string, password: string) {
-    await this.firebaseService.signin(email, password);
+  async logIn() {
+    this.firebaseService.logIn();
     this.router.navigateByUrl('/homepage');
   }
   
