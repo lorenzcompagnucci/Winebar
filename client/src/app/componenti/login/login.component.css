@@ -16,9 +16,9 @@ body {
 
 
 .google-btn {
-  position: relative;
-   left: 672px;
-   top:50px;
+  position: absolute;
+   left: 44%;
+   top:29%;
   width: 184px;
   height: 42px;
   background-color: blue;
