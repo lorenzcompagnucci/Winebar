@@ -2,6 +2,8 @@ body {
   background-color: #e2d3d3;
 }
 
+
+
 .box{
   text-align: center;
   padding-top: 100px;
@@ -18,7 +20,7 @@ body {
 .google-btn {
   position: absolute;
    left: 44%;
-   top:29%;
+   top:40%;
   width: 184px;
   height: 42px;
   background-color: blue;
