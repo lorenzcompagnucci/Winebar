@@ -21,24 +21,28 @@ export class DatabaseService {
   constructor(private http: HttpClient) { }
 
   fetchAllVini(): Observable<IVino[]> {
-    return this.http.get<IVino[]>(this.urlVini, {responseType: "json"}).
-    pipe(
+    return this.http.get<IVino[]>(this.urlVini, {responseType: "json"}).pipe(
       tap((_) => console.log('fetch vini')), 
        catchError(this.handleError<IVino[]>("errore fetch vini", []))
     );
   }
 
   fetchAllOrdini(): Observable<IOrdine[]> {
-    return this.http.get<IOrdine[]>(this.urlOrdini, {responseType: "json"}).
-    pipe(
+    return this.http.get<IOrdine[]>(this.urlOrdini, {responseType: "json"}).pipe(
       tap((_) => console.log('fetch ordini')), 
        catchError(this.handleError<IOrdine[]>("errore fetch ordini", []))
     );
   }
 
+  fetchAllOrdiniByUser(utente: string): Observable<IOrdine[]> {
+    return this.http.get<IOrdine[]>(this.urlOrdini+'/'+utente, {responseType: "json"}).pipe(
+      tap((_) => console.log('fetch ordini for: '+utente)), 
+       catchError(this.handleError<IOrdine[]>("errore fetch ordini", []))
+    );
+  }
+
   postVino(item: IVino): Observable<IVino> {
-    return this.http.post<IVino>(this.urlVini, item, this.httpOptions).
-    pipe(catchError(this.handleError<IVino>("postVino")))
+    return this.http.post<IVino>(this.urlVini, item, this.httpOptions).pipe(catchError(this.handleError<IVino>("postVino")))
   }
 
   postOrdine(item: IOrdine): Observable<IOrdine> {

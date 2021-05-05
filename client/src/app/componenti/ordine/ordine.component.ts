@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FirebaseService } from 'src/app/servizi/firebase.service';
 import { CarrelloService } from 'src/app/servizi/carrello.service';
@@ -28,7 +28,7 @@ export class OrdineComponent implements OnInit {
 
   ordina(telefono: string, citta: string, via: string): void {
     if (this.controllaDatiSpedizione(telefono, citta, via)) {
-      let ordine: IOrdine = {_id: '', utente: '', telefono: '', citta: '', via: '', importo: 0, vini: []};
+      let ordine: IOrdine = {_id: '', utente: '', telefono: '', citta: '', via: '', importo: 0, vini: [], data: new Date()};
       ordine.utente = this.firebaseService.getUserEmail;
       ordine.telefono = telefono;
       ordine.citta = citta;
@@ -46,7 +46,7 @@ export class OrdineComponent implements OnInit {
       response => {
         console.log('Ordine inserito!');
         this.carrelloService.carrello = [];
-        this.router.navigateByUrl('/homepage')
+        this.router.navigateByUrl('/account')
         alert("Il tuo ordine è stato ricevuto!");
       },
       error => console.log('ERRORE: ', error)

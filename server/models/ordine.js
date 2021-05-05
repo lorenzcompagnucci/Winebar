@@ -6,7 +6,8 @@ const ordineSchema = mongoose.Schema({
     citta: String,
     via: String,
     importo : Number,
-    vini: []
+    vini: [],
+    data: Date
 })
 
 module.exports = mongoose.model('Ordine', ordineSchema);

@@ -13,11 +13,14 @@ export class LoginComponent implements OnInit {
 
   constructor(private firebaseService: FirebaseService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.firebaseService.isLoggedIn) {
+      this.router.navigateByUrl('/account');
+    }
+  }
 
   async logIn() {
     this.firebaseService.logIn();
-    this.router.navigateByUrl('/homepage');
   }
   
 }

@@ -18,6 +18,8 @@ import { AutoriComponent } from './componenti/autori/autori.component';
 import { FirebaseService } from './servizi/firebase.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { AccountComponent } from './componenti/account/account.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { environment } from '../environments/environment';
     AutoriComponent,
     LoginComponent,
     AutoriComponent,
+    AccountComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(
@@ -43,7 +46,7 @@ import { environment } from '../environments/environment';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    BrowserModule, 
+    BrowserModule.withServerTransition({ appId: 'serverApp' }), 
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -52,7 +55,8 @@ import { environment } from '../environments/environment';
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    RouterModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]

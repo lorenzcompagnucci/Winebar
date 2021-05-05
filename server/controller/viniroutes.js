@@ -9,7 +9,7 @@ exports.getVini = async function (req, res) {
     }
 }
 
-exports.getVino = async function (req, res) {
+exports.getVinoID = async function (req, res) {
     let vino;
     try {
         vino = await Vino.findById(req.params.id);
