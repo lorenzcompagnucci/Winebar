@@ -12,13 +12,12 @@ import { DatabaseService } from 'src/app/servizi/database.service';
 export class ListinoComponent implements OnInit {
 
   public vini: IVino[] = [];
-  errMsg = '';
 
   constructor(private databaseService: DatabaseService, private carrelloService: CarrelloService) {
   }
 
   ngOnInit(): void {
-    this.databaseService.fetchAllVini().subscribe(data => this.vini = data, error => this.errMsg = error);
+    this.databaseService.fetchAllVini().subscribe(data => this.vini = data, error => console.log(error));
   }
 
   aggiungiAlCarrello(vino: IVino) {

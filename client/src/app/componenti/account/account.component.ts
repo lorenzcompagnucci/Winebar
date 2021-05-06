@@ -11,12 +11,11 @@ import { FirebaseService } from 'src/app/servizi/firebase.service';
 export class AccountComponent implements OnInit {
 
   public ordini: IOrdine[] = [];
-  errMsg = '';
 
   constructor(private firebaseService: FirebaseService, private databaseService: DatabaseService) { }
 
   ngOnInit(): void {
-    this.databaseService.fetchAllOrdiniByUser(this.firebaseService.getUserEmail).subscribe(data => this.ordini = data, error => this.errMsg = error);
+    this.databaseService.fetchAllOrdiniByUser(this.firebaseService.getUserEmail).subscribe(data => this.ordini = data, error => console.log(error));
   }
 
 }

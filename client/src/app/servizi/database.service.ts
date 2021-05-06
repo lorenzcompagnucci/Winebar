@@ -36,7 +36,7 @@ export class DatabaseService {
 
   fetchAllOrdiniByUser(utente: string): Observable<IOrdine[]> {
     return this.http.get<IOrdine[]>(this.urlOrdini+'/'+utente, {responseType: "json"}).pipe(
-      tap((_) => console.log('fetch ordini for: '+utente)), 
+      tap((_) => console.log('fetch ordini '+utente)), 
        catchError(this.handleError<IOrdine[]>("errore fetch ordini", []))
     );
   }

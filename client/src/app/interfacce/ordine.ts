@@ -5,6 +5,6 @@ export interface IOrdine {
     citta: string;
     via: string;
     importo: number;
-    vini: string[];
-    data: Date;
+    vini: any[];
+    data: string;
 }

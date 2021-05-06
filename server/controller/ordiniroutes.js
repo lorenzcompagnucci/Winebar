@@ -10,7 +10,7 @@ exports.getOrdini = async function (req, res) {
     }
 }
 
-exports.getOrdineID = async function (req, res) {
+exports.getOrdineID = async function (req, res, next) {
     let ordine;
     try {
         ordine = await Ordine.findById(req.params.id);
@@ -34,7 +34,7 @@ exports.getOrdineUser = async function(req, res) {
 }
 
 exports.saveOrder = async function(req, res) {
-    const ordineadd=new Ordine({
+    const nuovo = new Ordine({
         utente: req.body.utente,
         telefono: req.body.telefono,
         citta: req.body.citta,
@@ -44,7 +44,7 @@ exports.saveOrder = async function(req, res) {
         data: req.body.data
     }); 
     try {
-       const newOrdine = await ordineadd.save();
+       await nuovo.save();
        res.json(201);
     } catch(err) {
         console.log(err);
@@ -90,13 +90,9 @@ exports.updateOrdine = async function(req, res) {
 
 exports.deleteOrdine = async function(req, res) {
     try {
-        await res.ordini.remove();
+        await res.ordine.remove();
         res.json({message: 'Cancellato'});
     } catch(err) {
         res.status(500).json({message: err.me});
     }
-}
-
-function controlloUtente(utenteOrdine, utenteRichiesta) {
-    return utenteOrdine === utenteRichiesta;
 }

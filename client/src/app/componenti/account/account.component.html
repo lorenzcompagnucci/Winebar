@@ -4,26 +4,26 @@
 	<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
 </head>
 
-	<div class="table-title">
-		<h3><mat-icon>wine_bar</mat-icon>Lista ordini</h3>
-	</div>
-	<table class="table-fill">
-		<ul id="ss_elem_list" tabindex="0" role="listbox">
-			<thead>
-				<tr>
-					<th class="text-left">ID</th>
-					<th class="text-left">Importo</th>
-					<th class="text-left">Data</th>
-					<th class="text-left">Vini</th>
-				</tr>
-			</thead>
-			<tbody class="table-hover">
-				<tr *ngFor="let ordine of ordini">
-					<td class="text-left">{{ordine._id}}</td>
-					<td class="text-left">€{{ordine.importo}}</td>
-					<td class="text-left">{{ordine.data}}</td>
-					<td class="text-left">{{ordine.vini.length}}</td>
-				</tr>
-			</tbody>
-		</ul>
-	</table>
+<div class="table-title">
+	<h3><mat-icon>wine_bar</mat-icon>Lista ordini</h3>
+</div>
+<table class="table-fill">
+	<ul id="ss_elem_list" tabindex="0" role="listbox">
+		<thead>
+			<tr>
+				<th class="text-left">ID</th>
+				<th class="text-left">Importo</th>
+				<th class="text-left">Data</th>
+				<th class="text-left">Vini</th>
+			</tr>
+		</thead>
+		<tbody class="table-hover">
+			<tr *ngFor="let ordine of ordini">
+				<td class="text-left">{{ordine._id}}</td>
+				<td class="text-left">€{{ordine.importo}}</td>
+				<td class="text-left">{{ordine.data}}</td>
+				<td class="text-left">{{ordine.vini.length}}</td>
+			</tr>
+		</tbody>
+	</ul>
+</table>

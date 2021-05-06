@@ -9,7 +9,7 @@ exports.getVini = async function (req, res) {
     }
 }
 
-exports.getVinoID = async function (req, res) {
+exports.getVinoID = async function (req, res, next) {
     let vino;
     try {
         vino = await Vino.findById(req.params.id);
@@ -24,14 +24,14 @@ exports.getVinoID = async function (req, res) {
 }
 
 exports.saveVino = async function(req, res){
-    const vinoadd=new Vino({
+    const nuovo = new Vino({
         nome: req.body.nome,
         prezzo: req.body.prezzo,
         annata: req.body.annata,
         tipo: req.body.tipo
     }); 
     try {
-       const newVino = await vinoadd.save();
+       await nuovo.save();
        res.json(201);
     } catch(err){
         console.log(err);
@@ -65,7 +65,7 @@ exports.updateVino = async function(req, res) {
 
 exports.deleteVino = async function(req, res) {
     try {
-        await res.vini.remove();
+        await res.vino.remove();
         res.json({message: 'Cancellato'});
     } catch(err) {
         res.status(500).json({message: err.me});
