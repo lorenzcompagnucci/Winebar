@@ -1,3 +1,5 @@
+import { IVino } from "./vino";
+
 export interface IOrdine {
     _id: string;
     utente: string;
@@ -5,6 +7,6 @@ export interface IOrdine {
     citta: string;
     via: string;
     importo: number;
-    vini: any[];
+    vini: IVino[];
     data: string;
 }

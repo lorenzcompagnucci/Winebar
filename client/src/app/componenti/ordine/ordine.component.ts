@@ -5,6 +5,7 @@ import { CarrelloService } from 'src/app/servizi/carrello.service';
 import { DatabaseService } from 'src/app/servizi/database.service';
 import { IVino } from 'src/app/interfacce/vino';
 import { IOrdine } from '../../interfacce/ordine';
+import { ICoupon } from 'src/app/interfacce/coupon';
 
 @Component({
   selector: 'app-ordine',
@@ -15,14 +16,18 @@ import { IOrdine } from '../../interfacce/ordine';
 export class OrdineComponent implements OnInit {
 
   private carrello: IVino[] = [];
+  private coupons: ICoupon[] = [];
 
   constructor(private carrelloService: CarrelloService, private firebaseService: FirebaseService, private databaseService: DatabaseService, private router: Router) {}
 
   ngOnInit(): void {
-    if (!this.firebaseService.isLoggedIn) {
+    if (!this.firebaseService.isLogged()) {
       this.router.navigateByUrl('/login');
+    } else if (this.firebaseService.isAdmin()) {
+      this.router.navigateByUrl('/admin');
     }
     this.carrello = this.carrelloService.getSingolo();
+    this.coupons = this.databaseService.getCoupons();
   }
 
   getCarrello(): IVino[] {
@@ -33,25 +38,32 @@ export class OrdineComponent implements OnInit {
     this.carrelloService.rimuoviBottiglia(bottiglia);
   }
 
-  ordina(telefono: string, citta: string, via: string): void {
+  ordina(telefono: string, citta: string, via: string, couponID: string): void {
     if (this.controllaDatiSpedizione(telefono, citta, via)) {
       let data = new Date();
-      let ordine: IOrdine = {_id: '', utente: '', telefono: '', citta: '', via: '', importo: 0, vini: [], data: data.toLocaleDateString()};
-      ordine.utente = this.firebaseService.getUserEmail;
-      ordine.telefono = telefono;
-      ordine.citta = citta;
-      ordine.via = via;
-      ordine.importo = this.carrelloService.getTotale();
-      for (let bottiglia of this.carrelloService.getDuplicato()) {
-        ordine.vini.push(bottiglia);
+      let ordine: IOrdine = {_id: '', utente: this.firebaseService.getUserEmail, telefono: telefono, citta: citta, via: via, importo: this.carrelloService.getTotale(), vini: this.carrelloService.getDuplicato(), data: data.toLocaleDateString()};
+      let checkCoupon: boolean = false;
+      let coupon: ICoupon = {_id: couponID, vino: '', sconto: 0, utenti: []};
+      if (couponID.length >= 1) {
+        for (let c of this.coupons) {
+          if (c._id === coupon._id) {
+            coupon = c;
+            checkCoupon = this.controlloCoupon(coupon, ordine);
+            break;
+          }
+        }
       }
-      this.inviaOrdine(ordine);
+      this.inviaOrdine(ordine, coupon, checkCoupon);
     }
   }
 
-  inviaOrdine(ordine: IOrdine): void {
+  inviaOrdine(ordine: IOrdine, coupon: ICoupon, checkCoupon: boolean): void {
     this.databaseService.postOrdine(ordine).subscribe(
       response => {
+        if (checkCoupon) {
+          coupon.utenti.push(this.firebaseService.getUserEmail);
+          this.databaseService.patchCoupon(coupon);
+        }
         console.log('Ordine inserito!');
         this.carrelloService.svuotaCarrelli();
         this.router.navigateByUrl('/account')
@@ -75,6 +87,23 @@ export class OrdineComponent implements OnInit {
       return false;
     }
     return true;
+  }
+
+  controlloCoupon(coupon: ICoupon, ordine: IOrdine): boolean {
+    if (coupon !== null && !coupon.utenti.includes(this.firebaseService.getUserEmail)) {
+      if (coupon.vino === 'null') {
+        ordine.importo *= ((100 - coupon.sconto)/100);
+      } else {
+        for (let vino of ordine.vini) {
+          if (vino._id === coupon.vino) {
+            ordine.importo -= vino.prezzo * ((100 - coupon.sconto)/100);
+            return true;
+          }
+        }
+        return false;
+      }
+    }
+    return false;
   }
 
   carrelloVuoto(): boolean {

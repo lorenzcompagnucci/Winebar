@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~11.2.5",
     "@angular/platform-browser-dynamic": "~11.2.5",
     "@angular/platform-server": "~11.2.5",
+    "@angular/pwa": "0.1102.12",
     "@angular/router": "~11.2.5",
     "@angular/service-worker": "~11.2.5",
     "@ionic/angular": "^5.6.3",

@@ -20,6 +20,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AccountComponent } from './componenti/account/account.component';
 import { RouterModule } from '@angular/router';
+import { AdminComponent } from './componenti/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { RouterModule } from '@angular/router';
     LoginComponent,
     AutoriComponent,
     AccountComponent,
+    AdminComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(

@@ -1,8 +1,10 @@
+<!--
 <head>
 	<meta charset="utf-8" />
 	<title>Table Style</title>
 	<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
 </head>
+-->
 
 <div class="table-title">
 	<h3><mat-icon>wine_bar</mat-icon>Lista ordini</h3>
@@ -20,7 +22,7 @@
 		<tbody class="table-hover">
 			<tr *ngFor="let ordine of ordini">
 				<td class="text-left">{{ordine._id}}</td>
-				<td class="text-left">€{{ordine.importo}}</td>
+				<td class="text-left">€{{ordine.importo.toFixed(2)}}</td>
 				<td class="text-left">{{ordine.data}}</td>
 				<td class="text-left">{{ordine.vini.length}}</td>
 			</tr>

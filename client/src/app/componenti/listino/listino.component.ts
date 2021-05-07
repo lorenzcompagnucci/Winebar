@@ -17,7 +17,7 @@ export class ListinoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.databaseService.fetchAllVini().subscribe(data => this.vini = data, error => console.log(error));
+    this.vini = this.databaseService.getVini();
   }
 
   aggiungiAlCarrello(vino: IVino) {
