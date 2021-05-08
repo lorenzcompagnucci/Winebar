@@ -19,13 +19,17 @@
 					<td class="text-left">{{coupon.sconto}}%</td>
 					<td><button  mat-raised-button class="button button1" (click)="eliminaCoupon(coupon)">Elimina</button></td>
 				</tr>
-			<tr>
-			<input type="text" placeholder="vino" #vino>
-			<input type="text" placeholder="sconto" #sconto>
-			<button class="button button2" (click)="creaCoupon(vino.value, sconto.value)">Crea</button>
 		</tbody>
 	</ul>
 </table>
+<div class="box4">
+<input type="text" placeholder="vino" #vino>
+&nbsp;
+<input type="text" placeholder="sconto" #sconto>
+&nbsp;
+<button class="button button4" (click)="creaCoupon(vino.value, sconto.value)">Crea</button>
+</div>
+			
 
 <div class="table-title">
 	<h3><mat-icon>wine_bar</mat-icon>Coupons</h3>
@@ -52,12 +56,19 @@
 					<td class="text-left">{{vino.tipo}}</td>
 					<td><button mat-raised-button class="button button1" (click)="eliminaVino(vino)">Elimina</button></td>
 				</tr>
-			<tr>
-			<input type="text" placeholder="nome" #nome>
-			<input type="text" placeholder="annata" #annata>
-			<input type="text" placeholder="prezzo" #prezzo>
-			<input type="text" placeholder="tipo" #tipo>
-			<button class="button button2" (click)="creaVino(nome.value, prezzo.value, annata.value, tipo.value)">Crea</button>
+		
 		</tbody>
 	</ul>
 </table>		
+
+<div class="box3">
+<input type="text" placeholder="nome" #nome>
+&nbsp;
+<input type="text" placeholder="annata" #annata>
+&nbsp;
+<input type="text" placeholder="prezzo" #prezzo>
+&nbsp;
+<input type="text" placeholder="tipo" #tipo>
+&nbsp;
+<button class="button  button3" (click)="creaVino(nome.value, prezzo.value, annata.value, tipo.value)">Crea</button>
+</div>
