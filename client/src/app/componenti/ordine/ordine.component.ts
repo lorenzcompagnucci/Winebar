@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵCompiler_compileModuleAndAllComponentsSync__POST_R3__ } from '@angular/core';
 import { Router } from '@angular/router';
 import { FirebaseService } from 'src/app/servizi/firebase.service';
 import { CarrelloService } from 'src/app/servizi/carrello.service';
@@ -23,8 +23,6 @@ export class OrdineComponent implements OnInit {
   ngOnInit(): void {
     if (!this.firebaseService.isLogged()) {
       this.router.navigateByUrl('/login');
-    } else if (this.firebaseService.isAdmin()) {
-      this.router.navigateByUrl('/admin');
     }
     this.carrello = this.carrelloService.getSingolo();
     this.coupons = this.databaseService.getCoupons();
@@ -58,12 +56,12 @@ export class OrdineComponent implements OnInit {
   }
 
   inviaOrdine(ordine: IOrdine, coupon: ICoupon, checkCoupon: boolean): void {
+    if (checkCoupon) {
+      coupon.utenti.push(ordine.utente);
+      this.databaseService.patchCoupon(coupon).subscribe(() => { console.log("Success update")});
+    }
     this.databaseService.postOrdine(ordine).subscribe(
       response => {
-        if (checkCoupon) {
-          coupon.utenti.push(this.firebaseService.getUserEmail);
-          this.databaseService.patchCoupon(coupon);
-        }
         console.log('Ordine inserito!');
         this.carrelloService.svuotaCarrelli();
         this.router.navigateByUrl('/account')
@@ -93,6 +91,7 @@ export class OrdineComponent implements OnInit {
     if (coupon !== null && !coupon.utenti.includes(this.firebaseService.getUserEmail)) {
       if (coupon.vino === 'null') {
         ordine.importo *= ((100 - coupon.sconto)/100);
+        return true;
       } else {
         for (let vino of ordine.vini) {
           if (vino._id === coupon.vino) {

@@ -40,7 +40,7 @@ export class DatabaseService {
   }
 
   deleteVino(item: IVino): Observable<IVino> {
-    return this.http.delete<IVino>(this.urlVini, this.httpOptions).pipe(
+    return this.http.delete<IVino>(this.urlVini+'/'+item._id, this.httpOptions).pipe(
       tap((_) => console.log('delete coupon ' + item._id)),
       catchError(this.handleError<IVino>('errore delete coupon'))
     )
@@ -80,10 +80,11 @@ export class DatabaseService {
   }
 
   postCoupon(item: ICoupon): Observable<ICoupon> {
-    return this.http.post<ICoupon>(this.urlCoupons, item, this.httpOptions).pipe(catchError(this.handleError<ICoupon>("postVino")))
+    return this.http.post<ICoupon>(this.urlCoupons, item, this.httpOptions).pipe(catchError(this.handleError<ICoupon>("postCoupon error")))
   }
 
-  patchCoupon(item: ICoupon): Observable<ICoupon> {
+
+  patchCoupon(item: ICoupon): Observable<any> {
     return this.http.patch<ICoupon>(this.urlCoupons+'/'+item._id, item, this.httpOptions).pipe(
       tap((_) => console.log('patch coupon ' + item._id)),
       catchError(this.handleError<ICoupon>('errore patch coupon'))
@@ -91,7 +92,7 @@ export class DatabaseService {
   }
 
   deleteCoupon(item: ICoupon): Observable<ICoupon> {
-    return this.http.delete<ICoupon>(this.urlCoupons, this.httpOptions).pipe(
+    return this.http.delete<ICoupon>(this.urlCoupons+'/'+item._id, this.httpOptions).pipe(
       tap((_) => console.log('delete coupon ' + item._id)),
       catchError(this.handleError<ICoupon>('errore delete coupon'))
     )

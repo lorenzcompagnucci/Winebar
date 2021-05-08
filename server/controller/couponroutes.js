@@ -38,31 +38,6 @@ exports.saveCoupon = async function(req, res) {
     }
 }
 
-exports.updateCoupon = async function(req, res) {
-    try {
-        const {vino, sconto, scadenza, utenti} = req.body;
-        if (vino) {
-            await Ordine.updateOne({_id : req.params.id},
-                { $set:{"vino": req.body.vino}})
-        }
-        if (sconto) {
-            await Ordine.updateOne({_id : req.params.id},
-                { $set:{"sconto": req.body.sconto}})
-        }
-        if (scadenza) {
-            await Ordine.updateOne({_id : req.params.id},
-                { $set:{"scadenza": req.body.scadenza}})
-        }
-        if (utenti) {
-            await Ordine.updateOne({_id : req.params.id},
-                { $set:{"utenti": req.body.utenti}})
-        }
-        res.json({message: 'Coupon aggiornato'});
-    } catch (err) {
-        res.json({message: err});
-    }
-}
-
 exports.deleteCoupon = async function(req, res) {
     try {
         await res.coupon.remove();

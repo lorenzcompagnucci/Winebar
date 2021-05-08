@@ -36,18 +36,18 @@ export class AdminComponent implements OnInit {
   }
 
   public eliminaCoupon(coupon: ICoupon): void {
-    this.databaseService.deleteCoupon(coupon);
+    this.databaseService.deleteCoupon(coupon).subscribe(() => console.log('Coupon '+coupon._id+' eliminato'), errore => console.log(errore));
   }
 
   public eliminaVino(vino: IVino): void {
-    this.databaseService.deleteVino(vino);
+    this.databaseService.deleteVino(vino).subscribe(() => console.log('Vino '+vino._id+' eliminato'), errore => console.log(errore));
   }
 
   public creaCoupon(vino: string, sconto: string): void {
     var s :number = + sconto;
     if (this.checkDatiCoupon(vino, s)) {
       let coupon: ICoupon = {_id: '', vino: vino, sconto: s, utenti: []};
-      this.databaseService.postCoupon(coupon);
+      this.databaseService.postCoupon(coupon).subscribe(() => console.log('Coupon inserito'), errore => console.log(errore));
     }
   }
 
@@ -56,7 +56,7 @@ export class AdminComponent implements OnInit {
     var a: number = + annata;
     if (this.checkDatiVino(nome, p, a, tipo)) {
       let vino: IVino = {_id: '', nome: nome, prezzo: p, annata: a, tipo: tipo};
-      this.databaseService.postVino(vino);
+      this.databaseService.postVino(vino).subscribe(() => console.log('Vino inserito'), errore => console.log(errore));
     }
   }
 
@@ -69,7 +69,7 @@ export class AdminComponent implements OnInit {
       console.log("Inserisci un prezzo corretto");
       return false;
     }
-    if (annata.toString.length != 4) {
+    if (annata <= 1980 || annata > 2021) {
       console.log("Inserisci un anno corretto");
       return false;
     }

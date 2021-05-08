@@ -11,7 +11,7 @@
 					<tbody class="table-hover">
 						<tr *ngFor="let bottiglia of getCarrello()">
 							<td class="text-left">{{bottiglia.nome}}</td>
-		  				 	<td class="text-left">{{bottiglia.prezzo}}€</td>
+		  				 	<td class="text-left">€{{bottiglia.prezzo}}</td>
 							<td class="text-left">{{numeroBottiglie(bottiglia)}}</td>
 						   	<td class="text-left"><button mat-raised-button type="button" class="btn btn-default button1" (click)="rimuoviDalCarrello(bottiglia)">Rimuovi</button></td>
 						</tr>
@@ -37,6 +37,5 @@
 	<h1><em>Telefono</em></h1>
 	<h1><em>Città</em></h1>
 	<h1><em>Indirizzo</em></h1>
-	<h1><em>Eventuale coupon</em></h1>
 	<h1><strong>E infine brinda in compagnia!</strong></h1>
 </div>

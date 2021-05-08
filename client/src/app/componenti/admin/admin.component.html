@@ -1,56 +1,63 @@
-<div class="box">
-	<div class="table-title">
-		<h3><mat-icon>wine_bar</mat-icon>COUPON</h3>
-	</div>
-	<div class="listbox-area">
-		<div class="left-area"> 
-			<span id="ss_elem"></span>
-			<ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
-				<table class="table-fill">
-					<thead>
-					<tbody class="table-hover">
-						<tr *ngFor="let coupon of getCoupons()">
-							<td class="text-left">{{coupon._id}}</td>
-							<td class="text-left">{{coupon.vino}}</td>
-							<td class="text-left">{{coupon.sconto}}%</td>
-							<td><button  mat-raised-button class="button button1" (click)="eliminaCoupon(coupon)">Elimina</button></td>
-						</tr>
-					</tbody>
-				</table>
-			</ul>
+<div class="table-title">
+	<h3><mat-icon>wine_bar</mat-icon>Coupons</h3>
+</div>
+<table class="table-fill">
+	<ul id="ss_elem_list" tabindex="0" role="listbox">
+		<thead>
+			<tr>
+				<th class="text-left">ID</th>
+				<th class="text-left">Vino</th>
+				<th class="text-left">Sconto</th>
+				<th class="text-left">Elimina</th>
+			</tr>
+		</thead>
+		<tbody class="table-hover">
+			<tr>
+				<tr *ngFor="let coupon of getCoupons()">
+					<td class="text-left">{{coupon._id}}</td>
+					<td class="text-left">{{coupon.vino}}</td>
+					<td class="text-left">{{coupon.sconto}}%</td>
+					<td><button  mat-raised-button class="button button1" (click)="eliminaCoupon(coupon)">Elimina</button></td>
+				</tr>
+			<tr>
 			<input type="text" placeholder="vino" #vino>
 			<input type="text" placeholder="sconto" #sconto>
 			<button class="button button2" (click)="creaCoupon(vino.value, sconto.value)">Crea</button>
-	  	</div>
-	</div>
-</div>
+		</tbody>
+	</ul>
+</table>
 
-<div class="box">
-	<div class="table-title">
-		<h3><mat-icon>wine_bar</mat-icon>VINI</h3>
-	</div>
-	<div class="listbox-area">
-		<div class="left-area"> 
-			<span id="ss_elem"></span>
-			<ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
-				<table class="table-fill">
-					<thead>
-					<tbody class="table-hover">
-						<tr *ngFor="let vino of getVini()">
-							<td class="text-left">{{vino._id}}</td>
-							<td class="text-left">{{vino.nome}}</td>
-							<td class="text-left">{{vino.annata}}</td>
-							<td class="text-left">{{vino.prezzo}}</td>
-							<td><button mat-raised-button class="button button1" (click)="eliminaVino(vino)">Elimina</button></td>
-						</tr>
-					</tbody>
-				</table>
-			</ul>
+<div class="table-title">
+	<h3><mat-icon>wine_bar</mat-icon>Coupons</h3>
+</div>
+<table class="table-fill">
+	<ul id="ss_elem_list" tabindex="0" role="listbox">
+		<thead>
+			<tr>
+				<th class="text-left">ID</th>
+				<th class="text-left">Nome</th>
+				<th class="text-left">Annata</th>
+				<th class="text-left">Prezzo</th>
+				<th class="text-left">Tipo</th>
+				<th class="text-left">Elimina</th>
+			</tr>
+		</thead>
+		<tbody class="table-hover">
+			<tr>
+				<tr *ngFor="let vino of getVini()">
+					<td class="text-left">{{vino._id}}</td>
+					<td class="text-left">{{vino.nome}}</td>
+					<td class="text-left">{{vino.annata}}</td>
+					<td class="text-left">{{vino.prezzo}}</td>
+					<td class="text-left">{{vino.tipo}}</td>
+					<td><button mat-raised-button class="button button1" (click)="eliminaVino(vino)">Elimina</button></td>
+				</tr>
+			<tr>
 			<input type="text" placeholder="nome" #nome>
 			<input type="text" placeholder="annata" #annata>
 			<input type="text" placeholder="prezzo" #prezzo>
 			<input type="text" placeholder="tipo" #tipo>
 			<button class="button button2" (click)="creaVino(nome.value, prezzo.value, annata.value, tipo.value)">Crea</button>
-	  	</div>
-	</div>
-</div>
+		</tbody>
+	</ul>
+</table>		
