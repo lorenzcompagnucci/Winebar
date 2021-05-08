@@ -10,7 +10,8 @@ import 'firebase/auth';
 export class FirebaseService {
 
   private user: any;
-  isLoggedIn = false
+  private isLoggedIn = false
+  private admins: string[] = ['lorenz.compagnucci@studenti.unicam.it', 'alessandr.finocchi@studenti.unicam.it'];
 
   constructor(private firebaseAuth: AngularFireAuth) {
   }
@@ -42,6 +43,19 @@ export class FirebaseService {
 
   public get getUserEmail(): string {
     return this.user.email;
+  }
+
+  isAdmin(): boolean {
+    for (let user of this.admins) {
+      if (user === this.getUserEmail) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  isLogged(): boolean {
+    return this.isLoggedIn;
   }
 
 }

@@ -6,6 +6,7 @@ import { ListinoComponent } from './componenti/listino/listino.component';
 import { LoginComponent } from './componenti/login/login.component';
 import { OrdineComponent } from './componenti/ordine/ordine.component';
 import { AccountComponent } from './componenti/account/account.component';
+import { AdminComponent } from './componenti/admin/admin.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'ordine', component: OrdineComponent},
   {path: 'chisiamo', component: AutoriComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'account', component: AccountComponent}
+  {path: 'account', component: AccountComponent},
+  {path: 'admin', component: AdminComponent}
 ];
 
 @NgModule({

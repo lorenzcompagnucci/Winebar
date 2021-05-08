@@ -60,15 +60,15 @@ exports.updateOrdine = async function(req, res) {
         }
         if (telefono) {
             await Ordine.updateOne({_id : req.params.id},
-                { $set:{"utente": req.body.telefono}})
+                { $set:{"telefono": req.body.telefono}})
         }
         if (citta) {
             await Ordine.updateOne({_id : req.params.id},
-                { $set:{"utente": req.body.citta}})
+                { $set:{"citta": req.body.citta}})
         }
         if (via) {
             await Ordine.updateOne({_id : req.params.id},
-                { $set:{"utente": req.body.via}})
+                { $set:{"via": req.body.via}})
         }
         if (importo) {
             await Vino.updateOne({_id : req.params.id},
