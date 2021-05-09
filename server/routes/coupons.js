@@ -1,14 +1,40 @@
-let controller = require('../controller/couponroutes');
 const express = require('express');
 const router = express.Router();
 let Coupon = require('../models/coupon');
 
 //Ritorna tutti i coupons
-router.get('/', controller.getCoupons);
+router.get('/', async (req, res, next) => {
+    const result = await Coupon.find();
+    res.send(result);
+})
+
 //Ritorna il coupon corrispondente a quell'id
-router.get('/:id', controller.getCouponID);
+router.get('/:id', async (req, res, next) => {
+    const id = req.params.id;
+    try {
+        const result = await Coupon.findById(id);
+        res.send(result);
+    } catch (error) {
+        console.log(error.message);
+    }
+})
+
 //inserisce un coupon
-router.post('/',controller.saveCoupon);
+router.post('/', async (req, res, next) => {
+    try {
+        //const coupon = new Coupon(req.body);
+        const coupon = new Coupon({
+            vino: req.body.vino,
+            sconto: req.body.sconto,
+            utenti: req.body.utenti
+        });
+        const result = await coupon.save();
+        res.send(result);
+    } catch (error) {
+        console.log(error.message);
+    }
+})
+
 //aggiorna un coupon
 router.patch('/:id', async (req, res, next) => {
     try {
@@ -21,7 +47,16 @@ router.patch('/:id', async (req, res, next) => {
         console.log(error.message);
     }
 });
+
 //elimina un coupon
-router.delete('/:id', controller.getCouponID, controller.deleteCoupon);
+router.delete('/:id', async (req, res, next) => {
+    const id = req.params.id;
+    try {
+        await Coupon.findByIdAndDelete(id);
+        res.send('DELETE Coupon ' + id + ' OK');
+    } catch (error) {
+        console.log(error.message);
+    }
+})
 
 module.exports = router;

@@ -28,10 +28,12 @@ app.use(cookieParser());
 const viniRoutes = require('./routes/vini');
 const ordiniRoutes = require('./routes/ordini');
 const couponsRoutes = require('./routes/coupons');
+const utentiRoutes = require('./routes/utenti');
 
 app.use('/viniRoutes', viniRoutes);
 app.use('/ordiniRoutes', ordiniRoutes);
 app.use('/couponsRoutes', couponsRoutes);
+app.use('/utentiRoutes', utentiRoutes);
 
 app.use(function(req, res, next) {
     res.setHeader("Content-Security-Policy","img-src 'self'  https://maps.googleapis.com/ https://maps.gstatic.com/ http://www.w3.org/ connect-src: none");

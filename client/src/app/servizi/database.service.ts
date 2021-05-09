@@ -1,11 +1,10 @@
-import { Injectable, ɵSWITCH_COMPILE_NGMODULE__POST_R3__ } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IVino } from '../interfacce/vino';
 import { IOrdine } from '../interfacce/ordine';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { ICoupon } from '../interfacce/coupon';
-import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +15,7 @@ export class DatabaseService {
   private urlVini = 'http://localhost:3000/viniRoutes';
   private urlOrdini = 'http://localhost:3000/ordiniRoutes';
   private urlCoupons = 'http://localhost:3000/couponsRoutes';
+  private urlUtenti = 'http://localhost:3000/utentiRoutes';
   private coupons: ICoupon[] = [];
   private vini: IVino[] = [];
 
@@ -41,8 +41,8 @@ export class DatabaseService {
 
   deleteVino(item: IVino): Observable<IVino> {
     return this.http.delete<IVino>(this.urlVini+'/'+item._id, this.httpOptions).pipe(
-      tap((_) => console.log('delete coupon ' + item._id)),
-      catchError(this.handleError<IVino>('errore delete coupon'))
+      tap((_) => console.log('delete vino ' + item._id)),
+      catchError(this.handleError<IVino>('errore delete vino'))
     )
   }
 
@@ -96,6 +96,12 @@ export class DatabaseService {
       tap((_) => console.log('delete coupon ' + item._id)),
       catchError(this.handleError<ICoupon>('errore delete coupon'))
     )
+  }
+
+  postUtente(email: string): any {
+    return this.http.post<any>(this.urlUtenti, email, this.httpOptions).pipe(
+      tap(() => console.log('Login ok')), catchError(this.handleError<any>('errore login'))
+    );
   }
 
   handleError<T>(operation = "operation", result?: T) {

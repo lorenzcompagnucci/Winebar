@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
+import { FirebaseApp } from '@angular/fire';
 import { AngularFireAuth } from '@angular/fire/auth'
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import { DatabaseService } from './database.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,7 @@ export class FirebaseService {
   private isLoggedIn = false
   private admins: string[] = ['lorenz.compagnucci@studenti.unicam.it', 'alessandr.finocchi@studenti.unicam.it'];
 
-  constructor(private firebaseAuth: AngularFireAuth) {
+  constructor(private firebaseAuth: AngularFireAuth, private databaseService: DatabaseService) {
   }
 
   async logIn() {
@@ -21,6 +23,7 @@ export class FirebaseService {
       firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()).then((result) => {
         this.user = result.user;
         this.isLoggedIn = true;
+        //this.databaseService.postUtente(this.user.email).subscribe();
         alert("BENVENUTO!");
       }).catch(function(error) {
         console.log(error);
