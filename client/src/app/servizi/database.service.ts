@@ -15,7 +15,6 @@ export class DatabaseService {
   private urlVini = 'http://localhost:3000/viniRoutes';
   private urlOrdini = 'http://localhost:3000/ordiniRoutes';
   private urlCoupons = 'http://localhost:3000/couponsRoutes';
-  private urlUtenti = 'http://localhost:3000/utentiRoutes';
   private coupons: ICoupon[] = [];
   private vini: IVino[] = [];
 
@@ -96,12 +95,6 @@ export class DatabaseService {
       tap((_) => console.log('delete coupon ' + item._id)),
       catchError(this.handleError<ICoupon>('errore delete coupon'))
     )
-  }
-
-  postUtente(email: string): any {
-    return this.http.post<any>(this.urlUtenti, email, this.httpOptions).pipe(
-      tap(() => console.log('Login ok')), catchError(this.handleError<any>('errore login'))
-    );
   }
 
   handleError<T>(operation = "operation", result?: T) {

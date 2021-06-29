@@ -52,10 +52,9 @@ router.patch('/:id', async (req, res, next) => {
 
 //elimina un ordine
 router.delete('/:id', async (req, res, next) => {
-    const id = req.params.id;
     try {
-        await Ordine.findByIdAndDelete(id);
-        res.send('DELETE Ordine ' + id + ' OK');
+        const result = await Ordine.findByIdAndDelete(req.params.id);
+        res.send(result);
     } catch (error) {
         console.log(error.message);
     }

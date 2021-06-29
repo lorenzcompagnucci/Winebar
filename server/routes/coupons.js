@@ -10,9 +10,8 @@ router.get('/', async (req, res, next) => {
 
 //Ritorna il coupon corrispondente a quell'id
 router.get('/:id', async (req, res, next) => {
-    const id = req.params.id;
     try {
-        const result = await Coupon.findById(id);
+        const result = await Coupon.findById(req.params.id);
         res.send(result);
     } catch (error) {
         console.log(error.message);
@@ -50,10 +49,9 @@ router.patch('/:id', async (req, res, next) => {
 
 //elimina un coupon
 router.delete('/:id', async (req, res, next) => {
-    const id = req.params.id;
     try {
-        await Coupon.findByIdAndDelete(id);
-        res.send('DELETE Coupon ' + id + ' OK');
+        const result = await Coupon.findByIdAndDelete(req.params.id);
+        res.send(result);
     } catch (error) {
         console.log(error.message);
     }

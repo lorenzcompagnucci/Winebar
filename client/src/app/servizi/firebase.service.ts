@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { FirebaseApp } from '@angular/fire';
 import { AngularFireAuth } from '@angular/fire/auth'
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -23,7 +22,6 @@ export class FirebaseService {
       firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()).then((result) => {
         this.user = result.user;
         this.isLoggedIn = true;
-        //this.databaseService.postUtente(this.user.email).subscribe();
         alert("BENVENUTO!");
       }).catch(function(error) {
         console.log(error);
@@ -49,12 +47,7 @@ export class FirebaseService {
   }
 
   isAdmin(): boolean {
-    for (let user of this.admins) {
-      if (user === this.getUserEmail) {
-        return true;
-      }
-    }
-    return false;
+    return this.admins.includes(this.getUserEmail);
   }
 
   isLogged(): boolean {

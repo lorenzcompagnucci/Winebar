@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const checkAuth = require('../middleware/check_jwt');
 let Vino = require('../models/vino');
 
 //Ritorna tutti i vini
@@ -11,9 +10,8 @@ router.get('/', async (req, res, next) => {
 
 //Ritorna il vino corrispondente a quell'id
 router.get('/:id', async (req, res, next) => {
-    const id = req.params.id;
     try {
-        const result = await Vino.findById(id);
+        const result = await Vino.findById(req.params.id);
         res.send(result);
     } catch (error) {
         console.log(error.message);
@@ -51,10 +49,9 @@ router.patch('/:id', async (req, res, next) => {
 
 //elimina un vino
 router.delete('/:id', async (req, res, next) => {
-    const id = req.params.id;
     try {
-        await Vino.findByIdAndDelete(id);
-        res.send('DELETE Vino ' + id + ' OK');
+        const result = await Vino.findByIdAndDelete(req.params.id);
+        res.send(result);
     } catch (error) {
         console.log(error.message);
     }
